@@ -13,6 +13,8 @@ if(!isset($_COOKIE['COOKIES_MEMBER']) && !isset($_COOKIE['COOKIES_COOKIES'])){
         session_destroy();
         header("location:./");
 }else{
+
+    
   echo'<!-- App Capsule -->
     <div id="appCapsule">
     <div class="section mt-2">

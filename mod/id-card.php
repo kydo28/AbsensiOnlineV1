@@ -14,7 +14,6 @@ if(!isset($_COOKIE['COOKIES_MEMBER'])){
             session_destroy();
             header("location:./");
     }else{
-
       $codeContents = $row_user['employees_code'];
       $tempdir = './content/employees-code-qr/';
       #parameter inputan

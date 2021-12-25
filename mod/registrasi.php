@@ -52,20 +52,7 @@ $kode_karyawan = $huruf . sprintf("%03s", $urutan);
                         </div>
                     </div>
 
-                        <div class="form-group basic">
-                            <div class="input-wrapper">
-                                <label class="label">Jabatan</label>
-                                <select class="form-control" name="position_id" id="position_id"  required="">
-                                  <option value="">- Pilih -</option>';
-                                  $query="SELECT * from position_keamanan order by position_name ASC";
-                                  $result = $connection->query($query);
-                                  while($row = $result->fetch_assoc()) { 
-                                  echo'<option value="'.$row['position_id'].'">'.$row['position_name'].'</option>';
-                                  }echo'
-                                </select>
-                            </div>
-                        </div>
-
+                     
                         <div class="form-group basic">
                             <div class="input-wrapper">
                                 <label class="label">Shift</label>

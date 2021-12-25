@@ -27,7 +27,7 @@ if ($mod ==''){
                             <div class="item">
                                 <a href="./profile">
                                     <div class="icon-wrapper bg-primary">
-                                       <ion-icon name="person-outline"></ion-icon>
+                                        <ion-icon name="person-outline"></ion-icon>
                                     </div>
                                     <strong>Profil</strong>
                                 </a>
@@ -43,7 +43,7 @@ if ($mod ==''){
                             <div class="item">
                                 <a href="./id-card">
                                     <div class="icon-wrapper bg-warning">
-                                       <ion-icon name="id-card-outline"></ion-icon>
+                                        <ion-icon name="id-card-outline"></ion-icon>
                                     </div>
                                     <strong>ID Card</strong>
                                 </a>
@@ -51,7 +51,7 @@ if ($mod ==''){
                             <div class="item">
                                 <a href="./history">
                                     <div class="icon-wrapper bg-danger">
-                                       <ion-icon name="document-text-outline"></ion-icon>
+                                        <ion-icon name="document-text-outline"></ion-icon>
                                     </div>
                                     <strong>Riwayat</strong>
                                 </a>

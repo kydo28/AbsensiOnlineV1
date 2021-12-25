@@ -25,13 +25,13 @@ echo'
         </a>
         <!--<a href="./id-card" class="item">
             <div class="col">
-               <ion-icon name="id-card-outline"></ion-icon>
+                <ion-icon name="id-card-outline"></ion-icon>
                 <strong>ID Card</strong>
             </div>
         </a>-->
         <a href="./history" class="item">
             <div class="col">
-                 <ion-icon name="document-text-outline"></ion-icon>
+                    <ion-icon name="document-text-outline"></ion-icon>
                 <strong>Riwayat</strong>
             </div>
         </a>

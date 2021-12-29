@@ -4,6 +4,9 @@
 	$trimmed = trim($fullurl, ".php");
 	$canonical = rtrim($trimmed, '/' . '/?');
 
+
+	$today=date("D");
+	echo $today;
 	if (isset($_COOKIE['COOKIES_MEMBER'])) {
 	    header("location:./");
 	} else {

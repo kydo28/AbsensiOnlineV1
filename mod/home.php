@@ -17,7 +17,9 @@ if ($mod ==''){
                         <!-- Balance -->
                         <div class="balance">
                             <div class="left">
+                                <p id="day">
                                 <span class="title"> Selamat '.$salam.'</span>
+                                
                                 <h1 class="total">'.ucfirst($row_user['employees_name']).'</h1>
                             </div>
                         </div>
@@ -33,12 +35,12 @@ if ($mod ==''){
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="./present">
+                                <span type="button" id="absen">
                                     <div class="icon-wrapper bg-success">
                                         <ion-icon name="camera-outline"></ion-icon>
                                     </div>
                                     <strong>Absen</strong>
-                                </a>
+                                </span>
                             </div>
                             <div class="item">
                                 <a href="./id-card">
@@ -99,3 +101,27 @@ if ($mod ==''){
     include_once 'mod/sw-footer.php';
 }
 ?>
+<script>
+  const weekday = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+        const fullMonth=["Januari","Februari",'Maret',"April",'Mei',"Juni","Juli",'Agustus','September','Oktober','November','Desember']
+        const d=new Date()
+        let date=d.getDate();
+        let month=fullMonth[d.getMonth()];
+        let year=d.getFullYear();
+        let day=weekday[d.getDay()];
+
+
+    window.addEventListener('load',(event)=>{
+        document.getElementById('day').innerHTML=day+','+date+' '+month+' '+year;
+    })
+    document.getElementById('absen').addEventListener('click',(event)=>{
+        event.preventDefault()
+        if(day=="Sabtu" || day=="Minggu"){
+           alert('Maaf Hari ini sedang libur')
+        }
+        else{
+            window.location.href="./present"
+        }
+       
+    })
+</script>

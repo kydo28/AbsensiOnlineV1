@@ -51,6 +51,20 @@ $kode_karyawan = $huruf . sprintf("%03s", $urutan);
                             </select>
                         </div>
                     </div>
+                    <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="label">Perusahaan</label>
+                                <select class="form-control" name="shift_id" id="shift_id" required="">
+                                  <option value="">- Pilih -</option>';
+                                  $query="SELECT * from perusahaan order by name ASC";
+                                  $result = $connection->query($query);
+                                  while($row = $result->fetch_assoc()) { 
+                                  echo'<option value="'.$row['id'].'">'.$row['name'].'</option>';
+                                  }echo'
+                                </select>
+                            </div>
+                        </div>
+
 
                      
                         <div class="form-group basic">

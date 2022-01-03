@@ -1,4 +1,3 @@
-
 ///////////////////////////////////////////////////////////////////////////
 // Loader
 $(document).ready(function () {
@@ -40,8 +39,7 @@ $(".form-group .form-control").keyup(function () {
     var inputCheck = $(this).val().length;
     if (inputCheck > 0) {
         $(this).parent(".input-wrapper").addClass("not-empty");
-    }
-    else {
+    } else {
         $(this).parent(".input-wrapper").removeClass("not-empty");
     }
 });
@@ -53,3 +51,8 @@ $(".toggle-searchbox").click(function () {
     $("#search").fadeToggle(200);
     $("#search .form-control").focus();
 });
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////
+// navbarbottom

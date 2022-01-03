@@ -2,41 +2,56 @@
 	header('location:./404');
 } else {
 
+
 if(isset($_COOKIE['COOKIES_MEMBER'])){
 echo'
-<div class="appBottomMenu">
-        <a href="./" class="item">
-            <div class="col">
-                <ion-icon name="home-outline"></ion-icon>
-                <strong>Home</strong>
-            </div>
-        </a>
-        <a href="./profile" class="item">
-            <div class="col">
-                <ion-icon name="person-outline"></ion-icon>
-                <strong>Profil</strong>
-            </div>
-        </a>
-        <a href="present" class="item">
-            <div class="col">
-                <ion-icon name="camera-outline"></ion-icon>
-                <strong>Absen</strong>
-            </div>
-        </a>
-        <!--<a href="./id-card" class="item">
-            <div class="col">
-                <ion-icon name="id-card-outline"></ion-icon>
-                <strong>ID Card</strong>
-            </div>
-        </a>-->
-        <a href="./history" class="item">
-            <div class="col">
+<div class="navigation">
+    <ul>
+        <li class="list active">
+            <a href="./">
+                <span class="icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                </span>
+                <span class="text">Home</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="./profile">
+                <span class="icon">
+                    <ion-icon name="person-outline"></ion-icon>
+                </span>
+                <span class="text">Profil</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="./present">
+                <span class="icon">
+                    <ion-icon name="camera-outline"></ion-icon>
+                </span>
+                <span class="text">Absen</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="./id-card">
+                <span class="icon">
+                    <ion-icon name="id-card-outline"></ion-icon>
+                </span>
+                <span class="text">ID Card</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="./history">
+                <span class="icon">
                     <ion-icon name="document-text-outline"></ion-icon>
-                <strong>Riwayat</strong>
-            </div>
-        </a>
+                </span>
+                <span class="text">Riwayat</span>
+            </a>
+        </li>
+        <div class="indicator"></div>
+    </ul>
     </div>
-<!-- * App Bottom Menu -->';
+<!-- * App Bottom Menu -->
+';
 }
 
 echo'
@@ -57,6 +72,7 @@ if($mod =='id-card'){
 echo'
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>';?>
 <script type="text/javascript">
+
     /* ---------- Save Id Card ----------*/
 var element = $("#divToPrint"); // global variable
 var getCanvas; // global variable
@@ -125,10 +141,12 @@ if ($mod =='present'){?>
     
     // start webcame
     Webcam.set({
-        width: 590,height: 460,
+        width: 590,
+        height: 460,
         image_format: 'jpeg',
         jpeg_quality:80,
     });
+    
 
     var cameras = new Array(); //create empty array to later insert available devices
     navigator.mediaDevices.enumerateDevices() // get the available devices found in the machine
@@ -169,7 +187,7 @@ if ($mod =='present'){?>
                 $results2 = results[1];
                 if($results =='success'){
                     swal({title: 'Berhasil!', text:$results2, icon: 'success', timer: 3500,});
-                    setTimeout("location.href = './';",3600);
+                    setTimeout("location.href = './' ;",3600);
                 }else{
                     swal({title: 'Oops!', text:text, icon: 'error', timer: 3500,});
                 }
@@ -177,6 +195,7 @@ if ($mod =='present'){?>
         } );
     }
 </script>
+
 <?php }?>
   <!-- </body></html> -->
   </body>

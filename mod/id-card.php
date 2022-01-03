@@ -4,7 +4,7 @@ if ($mod ==''){
     echo'kosong';
 }else{
     include_once 'mod/sw-header.php';
-    require_once'./library/phpqrcode/qrlib.php'; 
+    require_once './library/phpqrcode/qrlib.php'; 
 if(!isset($_COOKIE['COOKIES_MEMBER'])){
             setcookie('COOKIES_MEMBER', '', 0, '/');
             setcookie('COOKIES_COOKIES', '', 0, '/');
@@ -55,7 +55,7 @@ if(!isset($_COOKIE['COOKIES_MEMBER'])){
                         </div>
                     </div>';?>
                     <hr>
-                    <a href="#" class="btn btn-primary btn-Convert-Html2Image"><ion-icon name="save-outline"></ion-icon> Siampan ID Card</a>
+                    <a href="#" class="btn btn-primary btn-Convert-Html2Image"><ion-icon name="save-outline"></ion-icon> Simpan ID Card</a>
                     <div id="previewImage" class="d-none"></div>
                 </div>
             </div>

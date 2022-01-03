@@ -18,8 +18,7 @@ if ($mod ==''){
                         <div class="balance">
                             <div class="left">
                                 <p id="day">
-                                <span class="title"> Selamat '.$salam.'</span>
-                                
+                                <p class="title"> Selamat '.$salam.'</p>
                                 <h1 class="total">'.ucfirst($row_user['employees_name']).'</h1>
                             </div>
                         </div>

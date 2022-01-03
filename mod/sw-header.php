@@ -112,7 +112,7 @@ echo'
 
   <!--CSS-->
   <link rel="stylesheet" href="'.$site_url.'/mod/assets/css/style.css">
-  <link rel="stylesheet" href="'.$site_url.'/mod/assets/css/sw-custom.css">
+  <link rel="stylesheet" href="'.$site_url.'/mod/assets/css/sw-custom.css?v1.1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">';
   if($mod =='history'){
     echo'

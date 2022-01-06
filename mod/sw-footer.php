@@ -8,7 +8,7 @@ echo'
 <div class="navigation">
     <ul>
         <li class="list active">
-            <a href="./">
+            <a href="#">
                 <span class="icon">
                     <ion-icon name="home-outline"></ion-icon>
                 </span>
@@ -16,7 +16,7 @@ echo'
             </a>
         </li>
         <li class="list">
-            <a href="./profile">
+            <a href="#">
                 <span class="icon">
                     <ion-icon name="person-outline"></ion-icon>
                 </span>
@@ -24,7 +24,7 @@ echo'
             </a>
         </li>
         <li class="list">
-            <a href="./present">
+            <a href="#">
                 <span class="icon">
                     <ion-icon name="camera-outline"></ion-icon>
                 </span>
@@ -32,7 +32,7 @@ echo'
             </a>
         </li>
         <li class="list">
-            <a href="./id-card">
+            <a href="#">
                 <span class="icon">
                     <ion-icon name="id-card-outline"></ion-icon>
                 </span>
@@ -40,7 +40,7 @@ echo'
             </a>
         </li>
         <li class="list">
-            <a href="./history">
+            <a href="#">
                 <span class="icon">
                     <ion-icon name="document-text-outline"></ion-icon>
                 </span>
@@ -66,11 +66,13 @@ echo'
 <script src="https://kit.fontawesome.com/0ccb04165b.js" crossorigin="anonymous"></script>
 <!-- Base Js File -->
 <script src="'.$base_url.'mod/assets/js/base.js"></script>
+<script src="'.$base_url.'mod/assets/js/sw-script.js"></script>
 <script src="'.$base_url.'mod/assets/js/sweetalert.min.js"></script>
 <script src="'.$base_url.'mod/assets/js/webcamjs/webcam.min.js"></script>';
 if($mod =='id-card'){
 echo'
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>';?>
+
 <script type="text/javascript">
 
     /* ---------- Save Id Card ----------*/
@@ -106,8 +108,7 @@ echo'
     
 </script>';
 }
-echo'
-<script src="'.$base_url.'/mod/assets/js/sw-script.js"></script>';
+
 if ($mod =='present'){?>
 <script type="text/javascript">
    var result;

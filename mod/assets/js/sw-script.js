@@ -91,6 +91,7 @@ $(document).ready(function () {
                             timer: 1500,
                         });
                         //setTimeout(function(){ location.reload(); }, 1500);
+                        setTimeout("location.href = './';", 3000);
                     } else {
                         swal({
                             title: 'Oops!',
@@ -143,7 +144,7 @@ $(document).ready(function () {
                             timer: 2000,
                         });
                         //setTimeout(function(){ location.reload(); }, 1500);
-                        setTimeout("location.href = './';", 3000);
+                        setTimeout("location.href = './login';", 3000);
                     } else {
                         swal({
                             title: 'Oops!',
@@ -520,3 +521,4 @@ function printData() {
 /*$('.btn-print').on('click',function(){
     printData();
 })*/
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

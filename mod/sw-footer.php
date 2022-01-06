@@ -8,7 +8,7 @@ echo'
 <div class="navigation">
     <ul>
         <li class="list active">
-            <a href="#">
+            <a class="klik_menu" id="home">
                 <span class="icon">
                     <ion-icon name="home-outline"></ion-icon>
                 </span>
@@ -16,7 +16,7 @@ echo'
             </a>
         </li>
         <li class="list">
-            <a href="#">
+            <a class="klik_menu" id="profile">
                 <span class="icon">
                     <ion-icon name="person-outline"></ion-icon>
                 </span>
@@ -24,7 +24,7 @@ echo'
             </a>
         </li>
         <li class="list">
-            <a href="#">
+            <a class="klik_menu" id="absen">
                 <span class="icon">
                     <ion-icon name="camera-outline"></ion-icon>
                 </span>
@@ -32,7 +32,7 @@ echo'
             </a>
         </li>
         <li class="list">
-            <a href="#">
+            <a class="klik_menu" id="id-card">
                 <span class="icon">
                     <ion-icon name="id-card-outline"></ion-icon>
                 </span>
@@ -40,7 +40,7 @@ echo'
             </a>
         </li>
         <li class="list">
-            <a href="#">
+            <a class="klik_menu" id="riwayat">
                 <span class="icon">
                     <ion-icon name="document-text-outline"></ion-icon>
                 </span>
@@ -74,6 +74,29 @@ echo'
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>';?>
 
 <script type="text/javascript">
+
+// $(document).ready(function(){
+//     //klik navbar tanpa reload
+// 		$('.klik_menu').click(function(){
+// 			var menu = $(this).attr('id');
+// 			if(menu == "home"){
+// 				$('#appCapsule').load('home.php');						
+// 			}else if(menu == "profile"){
+// 				$('#appCapsule').load('profile.php');						
+// 			}else if(menu == "absen"){
+// 				$('#appCapsule').load('present.php');						
+// 			}else if(menu == "id-card"){
+// 				$('#appCapsule').load('id-card.php');						
+// 			}else if(menu == "riwayat"){
+// 				$('#appCapsule').load('history');						
+// 			}
+// 		});
+ 
+ 
+// 		// halaman yang di load default pertama kali
+// 		$('#appCapsule').load('home.php');						
+ 
+// 	});
 
     /* ---------- Save Id Card ----------*/
 var element = $("#divToPrint"); // global variable

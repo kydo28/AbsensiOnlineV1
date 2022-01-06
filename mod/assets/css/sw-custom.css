@@ -294,7 +294,8 @@ div.dataTables_info {
 
 .navigation ul {
   display: flex;
-  width: 350px;
+  width: 310px;
+  padding-inline-start: 0%;
 }
 
 .navigation ul li {
@@ -388,17 +389,17 @@ div.dataTables_info {
 }
 
 .navigation ul li:nth-child(2).active~.indicator {
-  transform: translateX(calc(70px * 1));
+  transform: translateX(calc(60.5px * 1));
 }
 
 .navigation ul li:nth-child(3).active~.indicator {
-  transform: translateX(calc(70px * 2));
+  transform: translateX(calc(61.5px * 2));
 }
 
 .navigation ul li:nth-child(4).active~.indicator {
-  transform: translateX(calc(70px * 3));
+  transform: translateX(calc(61.5px * 3));
 }
 
 .navigation ul li:nth-child(5).active~.indicator {
-  transform: translateX(calc(70px * 4));
+  transform: translateX(calc(61.5px * 4));
 }

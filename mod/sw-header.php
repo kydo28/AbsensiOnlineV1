@@ -134,7 +134,7 @@ echo'
 if(isset($_COOKIE['COOKIES_MEMBER'])){
   echo'
 <!-- App Header -->
-    <div class="appHeader bg-primary text-light">
+    <div class="appHeader">
         <div class="left">
             <a href="#" class="headerButton" data-toggle="modal" data-target="#sidebarPanel">
                 <ion-icon name="menu-outline"></ion-icon>

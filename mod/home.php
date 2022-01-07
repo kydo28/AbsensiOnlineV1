@@ -10,6 +10,7 @@ if ($mod ==''){
     else {
         echo'
             <!-- App Capsule -->
+            
             <div id="appCapsule">
                 <!-- Wallet Card -->
                 <div class="section wallet-card-section pt-1">
@@ -66,7 +67,7 @@ if ($mod ==''){
                     <div class="section-title">1 Minggu Terakhir</div>
                         <div class="card">
                             <div class="table-responsive">
-                                <table class="table table-dark rounded bg-primary">
+                                <table class="table table-dark bg-table">
                                     <thead>
                                         <tr>
                                             <th scope="col">Tanggal</th>
@@ -94,6 +95,7 @@ if ($mod ==''){
                     </div>
                 </div>
             </div>
+            <div class="boxheader"></div>
             <!-- App Capsule -->
         ';
     }

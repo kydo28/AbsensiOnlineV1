@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2021 at 06:40 AM
+-- Generation Time: Jan 10, 2022 at 04:04 PM
 -- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.13
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,13 +70,52 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`id`, `employees_code`, `employees_email`, `employees_password`, `employees_name`, `position_id`, `shift_id`, `building_id`, `photo`, `created_login`, `created_cookies`) VALUES
-(12, 'sarimurni', 'sarimurni@gmail.com', '2e6f502934b03709793953eb87db5410b86cb1d5a071d2f1ba21a090bd08ec81', 'Sari murni', 2, 4, 2, '2021-06-26f3ccdd27d2000e3f9255a7e3e2c48800.jpg', '2021-07-02 13:35:25', 'f34937a705f3d24229f6d7963deeb753'),
-(13, 'sariayu', 'sariayu@gmail.com', '95a9b9bde273b18257593ec682b5d7afa4a272a4688187147b247d4fd444ae88', 'Sari Ayu', 1, 4, 2, '2021-06-26156005c5baf40ff51a327f1c34f2975b.jpg', '2021-06-26 04:52:00', '-'),
-(14, 'sarinovita', 'sarinovita@gmail.com', 'f979d4ec2952c8a6d92ff625c3dadd6c953915cfa36db36f6b43b77838003d55', 'Sari Novita', 1, 3, 2, '2021-06-26799bad5a3b514f096e69bbc4a7896cd9.jpg', '2021-06-26 04:53:00', '-'),
-(15, 'bagongahmad', 'bagongahmad@gmail.com', 'ed68761997e0654b47f557f6d16a8474f88f5214f7fa2b24aeee159227b93987', 'Bagong Ahmad', 1, 3, 2, '2021-06-26d0096ec6c83575373e3a21d129ff8fef.jpg', '2021-06-26 04:54:00', '-'),
-(16, 'julianto', 'julianto@gmail.com', '70b74ddde2eb65ddefda8022b44b3c320167ca1c4c4fe4e440cf058d755b31da', 'Julianto', 1, 3, 2, '2021-06-26032b2cc936860b03048302d991c3498f.jpg', '2021-06-26 04:55:00', '-'),
-(17, 'badruljuki', 'badruljuki@gmail.com', '1297180357ece67fbea395c5512a09e959c727f7fe799098dc2e1643c715282c', 'Badrul Juki', 7, 5, 2, '2021-06-2618e2999891374a475d0687ca9f989d83.jpg', '2021-06-26 05:01:49', '71a38d0569ec34d40b5ef616075fed28'),
-(18, 'OM001-2021', 'juki@gmail.com', '37315056995e4df1d459323dd839ff7d3db247deea647f596a9088cd26d03e10', 'Juki', 7, 4, 2, 'OM001-2021-caffa595a27d8533e7bc218c73908eaf-2341-.jpg', '2021-06-30 23:40:35', '9e9ee83b0dbd8d3f6dd19f8687a0aef9');
+(33, 'OM001-2022', 'test123@gmail.com', 'acd2bcf0a751e78ba7a1904d55cb26b00b7b5c21ea1c7a91b373c2cf44ae0b29', 'zxczxc', 1, 5, 1, '', '2022-01-10 18:56:06', 'cf5831de3973012ae4f2ee60242fb617'),
+(34, 'OM002-2022', 'test321@gmail.com', 'acd2bcf0a751e78ba7a1904d55cb26b00b7b5c21ea1c7a91b373c2cf44ae0b29', 'bagjasn', 1, 5, 2, '', '2022-01-10 18:56:06', 'cf5831de3973012ae4f2ee60242fb617'),
+(35, 'OM003-2022', 'test222@gmail.com', 'acd2bcf0a751e78ba7a1904d55cb26b00b7b5c21ea1c7a91b373c2cf44ae0b29', 'bagjazxc', 2, 5, 3, '', '2022-01-10 18:56:06', 'cf5831de3973012ae4f2ee60242fb617'),
+(36, 'OM004-2022', 'test221@gmail.com', 'acd2bcf0a751e78ba7a1904d55cb26b00b7b5c21ea1c7a91b373c2cf44ae0b29', 'bagjasn', 1, 4, 2, '', '2022-01-10 18:56:06', 'cf5831de3973012ae4f2ee60242fb617'),
+(37, 'OM005-2022', '222@gmail.com', 'acd2bcf0a751e78ba7a1904d55cb26b00b7b5c21ea1c7a91b373c2cf44ae0b29', 'azxczxc', 2, 4, 2, '', '2022-01-10 18:56:06', 'cf5831de3973012ae4f2ee60242fb617'),
+(38, 'OM006-2022', '111@gmail.com', 'acd2bcf0a751e78ba7a1904d55cb26b00b7b5c21ea1c7a91b373c2cf44ae0b29', 'zzxczxczxca', 2, 4, 2, '', '2022-01-10 18:56:06', 'cf5831de3973012ae4f2ee60242fb617');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `perusahaan`
+--
+
+CREATE TABLE `perusahaan` (
+  `id` int(245) NOT NULL,
+  `name` varchar(245) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `perusahaan`
+--
+
+INSERT INTO `perusahaan` (`id`, `name`) VALUES
+(1, 'PT.SUMMARECON AGUNG,Tbk'),
+(2, 'RUMAH SAKIT ANNISA'),
+(3, 'PT.DAECHANG AUTOMOTIVE INDONESIA'),
+(4, 'PT.HAB DONG INDO'),
+(5, 'PT.EUNSUNG RAYA INDONESIA'),
+(6, 'PT.TOP ABADI'),
+(7, 'PT.KORINA ABADI TEHNIK'),
+(8, 'PT.KORINA GLOBAL TEHNIK'),
+(9, 'PT.HANSUNG ELEKTRONIK INDONESIA'),
+(10, 'PT.JIWON VENIX INDONESIA'),
+(11, 'PT.ARSITEK HIGHPOLYMER'),
+(12, 'PT.SEJONG SUMMIT INDONESIA'),
+(13, 'PT.HANSUNG ELEKTRONIK INDONESIA'),
+(14, 'PT.TSUHIYOSHI PROCORE INDONESIA'),
+(15, 'HATAKEN LOGISTICS INDONESIA'),
+(16, 'SHINSUNG AUTOMOTIVE INDONESIA'),
+(17, 'PT.ASAHI SYINCROTECH INDONESIA'),
+(18, 'PT.BASUKI GRAHA FABRIKATAMA'),
+(19, 'PT.KUMOHI ENGINEERING INDONESIA'),
+(20, 'PT.KJ TECH INDONESIA'),
+(21, 'PT.KHN METAL INDONESIA'),
+(22, 'PT.CITRA GALVANIZING INDONESIA'),
+(23, 'PT.TIRTA JAYA');
 
 -- --------------------------------------------------------
 
@@ -85,9 +124,9 @@ INSERT INTO `employees` (`id`, `employees_code`, `employees_email`, `employees_p
 --
 
 CREATE TABLE `position` (
-  `position_id` int(5) NOT NULL,
-  `position_name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `position_id` int(245) NOT NULL,
+  `position_name` varchar(245) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `position`
@@ -95,8 +134,37 @@ CREATE TABLE `position` (
 
 INSERT INTO `position` (`position_id`, `position_name`) VALUES
 (1, 'STAFF'),
-(2, 'ACCOUNTING'),
-(7, 'MANAGER');
+(2, 'KARYAWAN');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `position_karyawan`
+--
+
+CREATE TABLE `position_karyawan` (
+  `position_karyawan_id` int(245) NOT NULL,
+  `position_karyawan_name` varchar(245) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `position_keamanan`
+--
+
+CREATE TABLE `position_keamanan` (
+  `position_id` int(5) NOT NULL,
+  `position_name` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `position_keamanan`
+--
+
+INSERT INTO `position_keamanan` (`position_id`, `position_name`) VALUES
+(8, 'CHIEF'),
+(9, 'ANGGOTA');
 
 -- --------------------------------------------------------
 
@@ -116,15 +184,6 @@ CREATE TABLE `presence` (
   `presence_address` text NOT NULL,
   `information` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `presence`
---
-
-INSERT INTO `presence` (`presence_id`, `employees_id`, `presence_date`, `time_in`, `time_out`, `picture_in`, `picture_out`, `present_id`, `presence_address`, `information`) VALUES
-(26, 12, '2021-06-26', '05:05:00', '11:05:00', 'sari-murni-in-2021-06-26-12.jpg', 'sari-murni-out-2021-06-26-12.jpg', 1, '-1.4851831,102.43805809999999', ''),
-(27, 12, '2021-06-30', '23:37:00', '00:00:00', 'sari-murni-in-2021-06-30-12.jpg', '', 1, '-1.4851831,102.43805809999999', ''),
-(28, 18, '2021-06-30', '23:42:00', '00:00:00', 'juki--in-2021-06-30-18.jpg', '', 1, '-1.4851831,102.43805809999999', '');
 
 -- --------------------------------------------------------
 
@@ -191,7 +250,7 @@ CREATE TABLE `site` (
 --
 
 INSERT INTO `site` (`site_id`, `site_url`, `site_name`, `site_phone`, `site_address`, `site_description`, `site_logo`, `site_email`, `site_email_domain`) VALUES
-(1, 'http://localhost:8074/sisteminformasi/premium/AbsensiOnlineV1', 'Absensi Online - Foto Selfie & Auto Detect Lokasi', '082377823390', '401XD Group, Jl. Sumbawa, Ulak Karang Utara, Kec. Padang Utara, Kota Padang, Sumatera Barat 25133', 'Aplikasi Sistem Absensi Online Berbasis Foto Selfie dan Auto Detect Lokasi. Absen Karyawan Kini Jadi Lebih Efisien. Sistem absensi dengan verifikasi foto selfie atau webcam, dilengkapi fitur deteksi lokasi pengguna yang akurat.', 'logo-absensipng.png', 'mycoding@401xd.com', 'mycoding@401xd.com');
+(1, 'http://localhost/AbsensiOnlineV1/', 'Absensi Online - Foto Selfie & Auto Detect Lokasi', '082377823390', '401XD Group, Jl. Sumbawa, Ulak Karang Utara, Kec. Padang Utara, Kota Padang, Sumatera Barat 25133', 'Aplikasi Sistem Absensi Online Berbasis Foto Selfie dan Auto Detect Lokasi. Absen Karyawan Kini Jadi Lebih Efisien. Sistem absensi dengan verifikasi foto selfie atau webcam, dilengkapi fitur deteksi lokasi pengguna yang akurat.', 'logo-absensipng.png', 'mycoding@401xd.com', 'mycoding@401xd.com');
 
 -- --------------------------------------------------------
 
@@ -258,9 +317,27 @@ ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `perusahaan`
+--
+ALTER TABLE `perusahaan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `position`
 --
 ALTER TABLE `position`
+  ADD PRIMARY KEY (`position_id`);
+
+--
+-- Indexes for table `position_karyawan`
+--
+ALTER TABLE `position_karyawan`
+  ADD PRIMARY KEY (`position_karyawan_id`);
+
+--
+-- Indexes for table `position_keamanan`
+--
+ALTER TABLE `position_keamanan`
   ADD PRIMARY KEY (`position_id`);
 
 --
@@ -313,19 +390,37 @@ ALTER TABLE `building`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `perusahaan`
+--
+ALTER TABLE `perusahaan`
+  MODIFY `id` int(245) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `position`
 --
 ALTER TABLE `position`
-  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `position_id` int(245) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `position_karyawan`
+--
+ALTER TABLE `position_karyawan`
+  MODIFY `position_karyawan_id` int(245) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `position_keamanan`
+--
+ALTER TABLE `position_keamanan`
+  MODIFY `position_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `presence`
 --
 ALTER TABLE `presence`
-  MODIFY `presence_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `presence_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `present_status`

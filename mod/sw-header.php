@@ -137,14 +137,14 @@ if(isset($_COOKIE['COOKIES_MEMBER'])){
     <div class="appHeader">
         <div class="left">
             <a href="#" class="headerButton" data-toggle="modal" data-target="#sidebarPanel">
-                <ion-icon name="menu-outline"></ion-icon>
+                <div class="animated-icon1"><span></span><span></span><span></span></div>
             </a>
         </div>
         <div class="pageTitle">
             <img src="'.$site_url.'/content/'.$site_logo.'" alt="logo" class="logo">
         </div>
         <div class="right">
-            <div class="headerButton" data-toggle="dropdown" id="dropdownMenuLink" aria-haspopup="true">';
+            <div data-toggle="dropdown" id="dropdownMenuLink" aria-haspopup="true">';
               if($row_user['photo'] ==''){
                 echo'<img src="'.$site_url.'/content/avatar.jpg" alt="image" class="imaged w40">';
               }else{
@@ -164,7 +164,7 @@ echo'<!-- App Sidebar -->
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body p-0">
-                    <!-- profile box -->
+                        <!-- profile box -->
                     <div class="profileBox pt-2 pb-2">
                         <div class="image-wrapper">';
                         if($row_user['photo'] ==''){
@@ -176,18 +176,18 @@ echo'<!-- App Sidebar -->
                         </div>
                         <div class="in">
                             <strong>'.ucfirst($row_user['employees_name']).'</strong>
-                            <div class="text-muted">'.$row_user['employees_code'].'</div>
+                            <div class="text-muted">ID : '.$row_user['employees_code'].'</div>
                         </div>
-                        <a href="#" class="btn btn-link btn-icon sidebar-close" data-dismiss="modal">
-                            <ion-icon name="close-outline"></ion-icon>
+                        <a href="#" class="btn headerButton btn-link btn-icon sidebar-close" data-dismiss="modal">
+                            <ion-icon name="chevron-back-outline"></ion-icon>                        
                         </a>
                     </div>
                     <!-- * profile box -->
               
                     <!-- menu -->
-                    <div class="listview-title mt-1">MENU UTAMA</div>
-                    <ul class="listview flush transparent no-line image-listview">
-                        <li>
+                    <div class="listview-title mt-1">MENU</div>
+                    <ul class="listview flush no-line image-listview">
+                        <li class="active">
                             <a href="./" class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="home-outline"></ion-icon>

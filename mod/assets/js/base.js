@@ -63,3 +63,12 @@ function activeLink() {
 }
 list.forEach((item) =>
     item.addEventListener('click', activeLink));
+
+
+$(document).ready(function () {
+
+    $('.headerButton').on('click', function () {
+
+        $('.animated-icon1').toggleClass('open');
+    });
+});

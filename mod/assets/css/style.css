@@ -2764,7 +2764,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
-  color: #D2BF21 !important;
+  color: #f3f3f3 !important;
   background-color: #285791;
   border-color: #285791;
 }
@@ -11871,7 +11871,7 @@ a:focus {
 .profileBox {
   padding: 0 16px;
   display: flex;
-  align-items: center;
+  background-color: #F2F7FF;
 }
 
 .profileBox .image-wrapper {
@@ -11886,12 +11886,12 @@ a:focus {
 .profileBox .in strong {
   display: block;
   font-weight: 500;
-  color: #333333;
+  color: #285791;
 }
 
 .profileBox .in .text-muted {
   font-size: 14px;
-  color: #6c757d !important;
+  color: #28579170 !important;
 }
 
 .sidebar-balance {
@@ -11953,6 +11953,9 @@ a:focus {
 
 #sidebarPanel .modal-body {
   margin-bottom: 16px;
+  background: url('../img/sidebar.png');
+  background-repeat: no-repeat;
+  background-position: 0 -100px;
 }
 
 .panelbox-left .listview>li,

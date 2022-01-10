@@ -14,6 +14,9 @@ if(!isset($_COOKIE['COOKIES_MEMBER'])){
         header("location:./");
 }else{
   echo'<!-- App Capsule -->
+
+    <div class="bg-profile bg-primary"></div>  
+
     <div id="appCapsule">
         <div class="section mt-3 text-center">
             <div class="avatar-section">
@@ -32,6 +35,10 @@ if(!isset($_COOKIE['COOKIES_MEMBER'])){
             </div>
         </div>
 
+
+<!-- Wallet Card -->
+<div class="section wallet-card-section pt-1">
+    <div class="wallet-card">
         <div class="section mt-2 mb-2">
             <div class="section-title">Profil</div>
             <div class="card">
@@ -117,7 +124,8 @@ if(!isset($_COOKIE['COOKIES_MEMBER'])){
                 </div>
             </div>
         </div>
-
+    </div>
+</div>
       
         <div class="section mt-2 mb-2">
             <div class="section-title">Update Password</div>

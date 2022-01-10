@@ -14,8 +14,8 @@ if ($mod ==''){
     <div class="layout">
     </div>     
         ';
-        include_once 'mod/sw-footer.php';
     }
+    include_once 'mod/sw-footer.php';
 }
 ?>
 <script>
@@ -30,7 +30,6 @@ if ($mod ==''){
 
     window.addEventListener('load',(event)=>{
         var path=window.location.pathname.replace('/AbsensiOnlineV1/','')
-        alert(path)
         switch(path){
             case '': 
                 $('.layout').load('./home2')
@@ -47,7 +46,7 @@ if ($mod ==''){
            alert('Maaf Hari ini sedang libur')
         }
         else{
-            window.location.href="./present"
+            $('.layout').load('./present')
         }
        
     })
@@ -55,7 +54,7 @@ if ($mod ==''){
 
     
 $('.klik_menu').click(function(e){
-    $('.home').hide()
+    e.preventDefault()
     var menu=$(this).attr('id')
     switch(menu){
         case 'profile':

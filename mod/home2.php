@@ -99,8 +99,12 @@ if ($mod ==''){
   <div class="boxheader"></div>
   <!-- App Capsule -->
         ';
+       
     }
+    include_once 'mod/sw-footer.php';
+  
 }
+
 ?>
 <script>
   const weekday = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];

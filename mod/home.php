@@ -13,8 +13,8 @@ if ($mod ==''){
         echo'
     <div class="layout">
     </div>     
-     
         ';
+        include_once 'mod/sw-footer.php';
     }
 }
 ?>

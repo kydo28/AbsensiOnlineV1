@@ -37,7 +37,7 @@ if(!isset($_COOKIE['COOKIES_MEMBER']) && !isset($_COOKIE['COOKIES_COOKIES'])){
                         <span class="latitude d-none" id="latitude"></span>
                         <div class="webcam-capture"></div>
                         <div class="form-group basic">';
-                        $query ="SELECT employees_id,time_in FROM presence WHERE employees_id='$row_user[id]' AND presence_date='$date'";
+                        $query ="SELECT employees_id,time_in FROM presence WHERE employees_id='$row_user[id]' AND time_out=''";
                         $result = $connection->query($query);
                         $row = $result->fetch_assoc();
                         if($result->num_rows > 0){
@@ -61,5 +61,4 @@ if(!isset($_COOKIE['COOKIES_MEMBER']) && !isset($_COOKIE['COOKIES_COOKIES'])){
 ';
 
   }
-  include_once 'mod/sw-footer.php';
 } ?>

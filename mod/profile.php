@@ -154,15 +154,11 @@ if(!isset($_COOKIE['COOKIES_MEMBER'])){
                         <hr>
                         <button type="submit" class="btn btn-primary mr-1 btn-block">Simpan</button>
                     </form>
-
                 </div>
             </div>
         </div>
-        
     </div>
     <!-- * App Capsule -->
 ';
-
   }
-  include_once 'mod/sw-footer.php';
 } ?>

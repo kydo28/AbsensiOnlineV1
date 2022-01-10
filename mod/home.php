@@ -1,3 +1,5 @@
+<script src="'.$base_url.'mod/assets/js/lib/jquery-3.4.1.min.js"></script>
+
 <?php 
 if ($mod ==''){
     header('location:../404');
@@ -6,100 +8,14 @@ if ($mod ==''){
     include_once 'mod/sw-header.php';
     if(!isset($_COOKIE['COOKIES_MEMBER'])){
         header('location:index');
-    }
+    }    
     else {
         echo'
-            <!-- App Capsule -->
-            
-            <div id="appCapsule">
-                <!-- Wallet Card -->
-                <div class="section wallet-card-section pt-1">
-                    <div class="wallet-card">
-                        <!-- Balance -->
-                        <div class="balance">
-                            <div class="left">
-                                <p id="day">
-                                <p class="title"> Selamat '.$salam.'</p>
-                                <h1 class="total">'.ucfirst($row_user['employees_name']).'</h1>
-                            </div>
-                        </div>
-                        <!-- * Balance -->
-                        <!-- Wallet Footer -->
-                        <div class="wallet-footer">
-                            <div class="item">
-                                <a href="./profile">
-                                    <div class="icon-wrapper bg-primary">
-                                        <ion-icon name="person-outline"></ion-icon>
-                                    </div>
-                                    <strong>Profil</strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <span type="button" id="absen">
-                                    <div class="icon-wrapper bg-success">
-                                        <ion-icon name="camera-outline"></ion-icon>
-                                    </div>
-                                    <strong>Absen</strong>
-                                </span>
-                            </div>
-                            <div class="item">
-                                <a href="./id-card">
-                                    <div class="icon-wrapper bg-warning">
-                                        <ion-icon name="id-card-outline"></ion-icon>
-                                    </div>
-                                    <strong>ID Card</strong>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="./history">
-                                    <div class="icon-wrapper bg-danger">
-                                        <ion-icon name="document-text-outline"></ion-icon>
-                                    </div>
-                                    <strong>Riwayat</strong>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- * Wallet Footer -->
-                    </div>
-                </div>
-                <!-- Wallet Card -->
-                <div class="section mt-2 mb-2">
-                    <div class="section-title">1 Minggu Terakhir</div>
-                        <div class="card">
-                            <div class="table-responsive">
-                                <table class="table table-dark bg-table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Tanggal</th>
-                                            <th scope="col">Jam Masuk</th>
-                                            <th scope="col">Jam Pulang</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>';
-                                        $query_absen="SELECT presence_date,time_in,time_out FROM presence WHERE MONTH(presence_date) ='$month' AND employees_id='$row_user[id]' ORDER BY presence_id DESC LIMIT 6";
-                                        $result_absen = $connection->query($query_absen);
-                                        if($result_absen->num_rows > 0){
-                                            while ($row_absen= $result_absen->fetch_assoc()) {
-                                            echo'
-                                            <tr>
-                                                <th scope="row">'.tgl_ind($row_absen['presence_date']).'</th>
-                                                <td>'.$row_absen['time_in'].'</td>
-                                                <td>'.$row_absen['time_out'].'</td>
-                                            </tr>';
-                                        }}
-                                        echo'
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="boxheader"></div>
-            <!-- App Capsule -->
+    <div class="layout">
+    </div>     
+     
         ';
     }
-    include_once 'mod/sw-footer.php';
 }
 ?>
 <script>
@@ -113,6 +29,16 @@ if ($mod ==''){
 
 
     window.addEventListener('load',(event)=>{
+        var path=window.location.pathname.replace('/AbsensiOnlineV1/','')
+        alert(path)
+        switch(path){
+            case '': 
+                $('.layout').load('./home2')
+                break;
+            case 'home':
+                $('.layout').load('./home2')
+                break;  
+        }
         document.getElementById('day').innerHTML=day+','+date+' '+month+' '+year;
     })
     document.getElementById('absen').addEventListener('click',(event)=>{
@@ -125,4 +51,29 @@ if ($mod ==''){
         }
        
     })
+
+
+    
+$('.klik_menu').click(function(e){
+    $('.home').hide()
+    var menu=$(this).attr('id')
+    switch(menu){
+        case 'profile':
+            $('.layout').load('./profile')
+            break;
+        case 'home':
+            $('.layout').load('./home2')
+            break;
+        case 'absen':
+            $('.layout').load('./present')
+            break;
+        case 'id-card':
+            $('.layout').load('./id-card')
+            break;
+        case 'riwayat':
+            $('.layout').load('./history')
+            break;
+    }
+  
+})
 </script>

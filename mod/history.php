@@ -171,9 +171,6 @@ if(!isset($_COOKIE['COOKIES_MEMBER']) && !isset($_COOKIE['COOKIES_COOKIES'])){
             </div>
         </div>
         <!-- * END UPDATE ABSENSI -->
-
 </div>';
-
   }
-  include_once 'mod/sw-footer.php';
 } ?>

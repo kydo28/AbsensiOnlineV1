@@ -71,7 +71,6 @@ break;
 
 /* ------------- REGISTRASI ---------------*/
 case 'registrasi':
-
 $query = mysqli_query($connection, "SELECT max( employees_code) as kodeTerbesar FROM employees");
 $data = mysqli_fetch_array($query);
 $kode_karyawan = $data['kodeTerbesar'];

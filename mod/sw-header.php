@@ -127,9 +127,7 @@ echo'
 <body>
 <div class="loading"><div class="spinner-border text-primary" role="status"></div></div>
   <!-- loader -->
-    <div id="loader">
-        <img src="'.$site_url.'/mod/assets/img/Preloader.gif" alt="icon" class="loading-icon">
-    </div>
+   
     <!-- * loader -->';
 if(isset($_COOKIE['COOKIES_MEMBER'])){
   echo'

@@ -65,5 +65,4 @@ if(!isset($_COOKIE['COOKIES_MEMBER'])){
     <!-- * App Capsule -->
     <?php
   }
-  include_once 'mod/sw-footer.php';
 } ?>

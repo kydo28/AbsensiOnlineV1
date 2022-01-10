@@ -5,12 +5,13 @@
 
 if(isset($_COOKIE['COOKIES_MEMBER'])){
 echo'
+
 <div class="navigation">
     <ul>
         <li class="list active">
             <a class="klik_menu" id="home">
                 <span class="icon">
-                    <ion-icon name="home-outline"></ion-icon>
+                    <ion-icon name="home-outline" href="home"></ion-icon>
                 </span>
                 <span class="text">Home</span>
             </a>
@@ -50,6 +51,8 @@ echo'
         <div class="indicator"></div>
     </ul>
     </div>
+
+   
 <!-- * App Bottom Menu -->
 ';
 }
@@ -134,6 +137,11 @@ echo'
 
 if ($mod =='present'){?>
 <script type="text/javascript">
+    
+
+
+
+
    var result;
     $(document).ready(function getLocation() {
         result = document.getElementById("latitude");
@@ -224,4 +232,6 @@ if ($mod =='present'){?>
   <!-- </body></html> -->
   </body>
 </html><?php }?>
-
+<script>
+   
+</script>

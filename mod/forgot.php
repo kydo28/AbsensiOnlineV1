@@ -24,7 +24,6 @@ $kode_karyawan = $huruf . sprintf("%03s", $urutan);
             <form id="form-forgot">
                 <div class="card">
                     <div class="card-body pb-1">
-    
                         <div class="form-group basic">
                             <div class="input-wrapper">
                                 <label class="label">Email</label>
@@ -32,10 +31,8 @@ $kode_karyawan = $huruf . sprintf("%03s", $urutan);
                                 <i class="clear-input"><ion-icon name="close-circle"></ion-icon></i>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
                 <div class="p-2">
                     <div class="pb-1">
                         <button type="submit" class="btn btn-primary btn-block"></i>Lanjut</button>

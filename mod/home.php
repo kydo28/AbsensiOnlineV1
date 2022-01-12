@@ -56,6 +56,7 @@ if ($mod ==''){
 $('.klik_menu').click(function(e){
     e.preventDefault()
     var menu=$(this).attr('id')
+    alert(menu)
     switch(menu){
         case 'profile':
             $('.layout').load('./profile')
@@ -73,6 +74,40 @@ $('.klik_menu').click(function(e){
             $('.layout').load('./history')
             break;
     }
+   
   
 })
+const list_sidebar = document.querySelectorAll('.list-sidebar');
+
+function activeLink() {
+    
+    var menu=$(this).attr('id')
+    alert(menu)
+    switch(menu){
+        case 'side-profile':
+            $('.layout').load('./profile')
+            break;
+        case 'side-home':
+            $('.layout').load('./home2')
+            break;
+        case 'side-present':
+            $('.layout').load('./present')
+            break;
+        case 'side-id-card':
+            $('.layout').load('./id-card')
+            break;
+        case 'side-history':
+            $('.layout').load('./history')
+            break;
+        case 'side-logout':
+            window.location.href='./index'
+    }
+    list_sidebar.forEach((item) =>{
+        item.classList.remove('active')
+        });
+    this.classList.add('active');
+}
+list_sidebar.forEach((item) =>
+    item.addEventListener('click', activeLink));
+
 </script>

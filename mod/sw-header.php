@@ -1,3 +1,4 @@
+<script src="'.$base_url.'mod/assets/js/lib/jquery-3.4.1.min.js"></script>
 <?php
 
 $fullurl = ($_SERVER['PHP_SELF']);
@@ -189,43 +190,43 @@ echo'<!-- App Sidebar -->
                     <!-- menu -->
                     <div class="listview-title mt-1">MENU</div>
                     <ul class="listview flush no-line image-listview">
-                        <li class="list-sidebar active">
+                        <li class="list-sidebar active"  id="side-home">
                             <a class="item">
                                 <div class="icon-box">
                                     <ion-icon name="home-outline"></ion-icon>
                                 </div> Home 
                             </a>
                         </li>
-                        <li class="list-sidebar">
+                        <li class="list-sidebar" id="side-profile">
                             <a class="item">
                                 <div class="icon-box">
                                     <ion-icon name="person-outline"></ion-icon>
                                 </div> Profil
                             </a>
                         </li>
-                        <li class="list-sidebar">
-                            <a class="item">
+                        <li class="list-sidebar" id="side-present">
+                            <a class="item" >
                                 <div class="icon-box">
                                     <ion-icon name="scan-outline"></ion-icon>
                                 </div> Absen
                             </a>
                         </li>
-                        <li class="list-sidebar">
-                            <a class="item">
+                        <li class="list-sidebar" id="side-id-card">
+                            <a class="item" id="side-id-card">
                                 <div class="icon-box">
                                   <ion-icon name="id-card-outline"></ion-icon>
                                 </div> ID Card
                             </a>
                         </li>
-                        <li class="list-sidebar">
-                            <a class="item">
+                        <li class="list-sidebar" id="side-history">
+                            <a class="item" >
                                 <div class="icon-box">
                                     <ion-icon name="document-text-outline"></ion-icon>
                                 </div> Riwayat
                             </a>
                         </li>
-                        <li class="list-sidebar">
-                            <a class="item">
+                        <li class="list-sidebar" id="side-logout">
+                            <a class="item" >
                                 <div class="icon-box">
                                     <ion-icon name="log-out-outline"></ion-icon>
                                 </div> Keluar
@@ -242,13 +243,5 @@ echo'<!-- App Sidebar -->
  }?>
 
 <script>
-const list = document.querySelectorAll('.list-sidebar');
 
-function activeLink() {
-    list.forEach((item) =>
-        item.classList.remove('active'));
-    this.classList.add('active');
-}
-list.forEach((item) =>
-    item.addEventListener('click', activeLink));
 </script>

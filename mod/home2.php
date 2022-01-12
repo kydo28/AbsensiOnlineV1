@@ -101,8 +101,6 @@ if ($mod ==''){
         ';
        
     }
-    include_once 'mod/sw-footer.php';
-  
 }
 
 ?>

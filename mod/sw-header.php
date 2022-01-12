@@ -150,12 +150,16 @@ if(isset($_COOKIE['COOKIES_MEMBER'])){
                 <img src="'.$site_url.'/content/karyawan/'.$row_user['photo'].'" alt="image" class="imaged w40">';}
               echo'
                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">';?>
-                <a class="dropdown-item" onclick="location.href='profile';" href="profile"><ion-icon size="small" name="person-outline"></ion-icon>Profil</a>
-                <a class="dropdown-item" onclick="location.href='logout';" href="logout"><ion-icon size="small" name="log-out-outline"></ion-icon>Keluar</a>
-              </div>
-            </div>
-        </div>
-    </div>
+<a class="dropdown-item" onclick="location.href='profile';" href="profile">
+    <ion-icon size="small" name="person-outline"></ion-icon>Profil
+</a>
+<a class="dropdown-item" onclick="location.href='logout';" href="logout">
+    <ion-icon size="small" name="log-out-outline"></ion-icon>Keluar
+</a>
+</div>
+</div>
+</div>
+</div>
 <?php
 echo'<!-- App Sidebar -->
     <div class="modal fade panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
@@ -185,42 +189,42 @@ echo'<!-- App Sidebar -->
                     <!-- menu -->
                     <div class="listview-title mt-1">MENU</div>
                     <ul class="listview flush no-line image-listview">
-                        <li class="active">
+                        <li class="list-sidebar active">
                             <a href="./" class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="home-outline"></ion-icon>
                                 </div> Home 
                             </a>
                         </li>
-                        <li>
+                        <li class="list-sidebar active">
                             <a href="./profile" class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="person-outline"></ion-icon>
                                 </div> Profil
                             </a>
                         </li>
-                        <li>
+                        <li class="list-sidebar">
                             <a href="./present" class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="scan-outline"></ion-icon>
                                 </div> Absen
                             </a>
                         </li>
-                        <li>
+                        <li class="list-sidebar">
                             <a href="./id-card" class="item">
                                 <div class="icon-box bg-primary">
                                   <ion-icon name="id-card-outline"></ion-icon>
                                 </div> ID Card
                             </a>
                         </li>
-                        <li>
+                        <li class="list-sidebar">
                             <a href="./history" class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="document-text-outline"></ion-icon>
                                 </div> Riwayat
                             </a>
                         </li>
-                        <li>
+                        <li class="list-sidebar">
                             <a href="./logout" class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="log-out-outline"></ion-icon>

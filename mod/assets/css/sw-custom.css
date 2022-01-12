@@ -461,3 +461,21 @@ div.dataTables_info {
 .navigation ul li:nth-child(5).active~.indicator {
   transform: translateX(calc(61.5px * 4));
 }
+
+li.list-sidebar a:hover {
+  background-color: transparent;
+}
+
+li.list-sidebar.active a {
+  color: #fff500;
+}
+
+li.list-sidebar.active a:hover {
+  background-color: transparent;
+}
+
+.list-sidebar.active,
+.list-sidebar.active:focus,
+.list-sidebar.active:hover {
+  background-color: #3600e6;
+}

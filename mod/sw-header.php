@@ -190,42 +190,42 @@ echo'<!-- App Sidebar -->
                     <div class="listview-title mt-1">MENU</div>
                     <ul class="listview flush no-line image-listview">
                         <li class="list-sidebar active">
-                            <a href="./" class="item">
+                            <a class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="home-outline"></ion-icon>
                                 </div> Home 
                             </a>
                         </li>
                         <li class="list-sidebar active">
-                            <a href="./profile" class="item">
+                            <a class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="person-outline"></ion-icon>
                                 </div> Profil
                             </a>
                         </li>
                         <li class="list-sidebar">
-                            <a href="./present" class="item">
+                            <a class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="scan-outline"></ion-icon>
                                 </div> Absen
                             </a>
                         </li>
                         <li class="list-sidebar">
-                            <a href="./id-card" class="item">
+                            <a class="item">
                                 <div class="icon-box bg-primary">
                                   <ion-icon name="id-card-outline"></ion-icon>
                                 </div> ID Card
                             </a>
                         </li>
                         <li class="list-sidebar">
-                            <a href="./history" class="item">
+                            <a class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="document-text-outline"></ion-icon>
                                 </div> Riwayat
                             </a>
                         </li>
                         <li class="list-sidebar">
-                            <a href="./logout" class="item">
+                            <a class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="log-out-outline"></ion-icon>
                                 </div> Keluar

@@ -467,15 +467,16 @@ li.list-sidebar a:hover {
 }
 
 li.list-sidebar.active a {
-  color: #fff500;
+  color: #F2F7FF !important;
 }
 
 li.list-sidebar.active a:hover {
   background-color: transparent;
+
 }
 
 .list-sidebar.active,
 .list-sidebar.active:focus,
 .list-sidebar.active:hover {
-  background-color: #3600e6;
+  background-color: #285791;
 }

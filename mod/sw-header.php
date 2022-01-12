@@ -203,7 +203,7 @@ echo'<!-- App Sidebar -->
                                 </div> Profil
                             </a>
                         </li>
-                        <li class="list-sidebar">
+                        <li class="list-sidebar active">
                             <a class="item">
                                 <div class="icon-box bg-primary">
                                     <ion-icon name="scan-outline"></ion-icon>

@@ -386,6 +386,7 @@ div.dataTables_info {
   z-index: 1;
   left: 1%;
   cursor: pointer;
+  margin-bottom: -45px;
 }
 
 .navigation ul li a {
@@ -441,40 +442,16 @@ div.dataTables_info {
   transition: 0.5s;
 }
 
-.indicator::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -22px;
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  border-top-right-radius: 20px;
-  box-shadow: 0px -10px 0 0 #F2F7FF;
-}
-
-.indicator::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -22px;
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  border-top-left-radius: 20px;
-  box-shadow: 0px -10px 0 0 #F2F7FF;
-}
-
 .navigation ul li:nth-child(1).active~.indicator {
   transform: translateX(calc(70px * 0));
 }
 
 .navigation ul li:nth-child(2).active~.indicator {
-  transform: translateX(calc(60.5px * 1));
+  transform: translateX(calc(61px * 1));
 }
 
 .navigation ul li:nth-child(3).active~.indicator {
-  transform: translateX(calc(61.5px * 2));
+  transform: translateX(calc(62px * 2));
 }
 
 .navigation ul li:nth-child(4).active~.indicator {

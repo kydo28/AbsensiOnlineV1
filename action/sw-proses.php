@@ -266,7 +266,7 @@ if (empty($_GET['latitude'])) {
   $result_u = $connection->query($query_u);
   if($result_u->num_rows > 0){
       $row_u = $result_u->fetch_assoc();
-
+    
       // Cek data Absen Berdasarkan tanggal sekarang
       $query  ="SELECT employees_id,time_in FROM presence WHERE employees_id='$row_u[id]' AND presence_date='$date'";
       $result = $connection->query($query);

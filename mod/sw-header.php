@@ -191,42 +191,42 @@ echo'<!-- App Sidebar -->
                     <ul class="listview flush no-line image-listview">
                         <li class="list-sidebar active">
                             <a class="item">
-                                <div class="icon-box bg-primary">
+                                <div class="icon-box">
                                     <ion-icon name="home-outline"></ion-icon>
                                 </div> Home 
                             </a>
                         </li>
-                        <li class="list-sidebar active">
+                        <li class="list-sidebar">
                             <a class="item">
-                                <div class="icon-box bg-primary">
+                                <div class="icon-box">
                                     <ion-icon name="person-outline"></ion-icon>
                                 </div> Profil
                             </a>
                         </li>
-                        <li class="list-sidebar active">
+                        <li class="list-sidebar">
                             <a class="item">
-                                <div class="icon-box bg-primary">
+                                <div class="icon-box">
                                     <ion-icon name="scan-outline"></ion-icon>
                                 </div> Absen
                             </a>
                         </li>
                         <li class="list-sidebar">
                             <a class="item">
-                                <div class="icon-box bg-primary">
+                                <div class="icon-box">
                                   <ion-icon name="id-card-outline"></ion-icon>
                                 </div> ID Card
                             </a>
                         </li>
                         <li class="list-sidebar">
                             <a class="item">
-                                <div class="icon-box bg-primary">
+                                <div class="icon-box">
                                     <ion-icon name="document-text-outline"></ion-icon>
                                 </div> Riwayat
                             </a>
                         </li>
                         <li class="list-sidebar">
                             <a class="item">
-                                <div class="icon-box bg-primary">
+                                <div class="icon-box">
                                     <ion-icon name="log-out-outline"></ion-icon>
                                 </div> Keluar
                             </a>
@@ -240,3 +240,15 @@ echo'<!-- App Sidebar -->
     <!-- * App Sidebar -->';
   }
  }?>
+
+<script>
+const list = document.querySelectorAll('.list-sidebar');
+
+function activeLink() {
+    list.forEach((item) =>
+        item.classList.remove('active'));
+    this.classList.add('active');
+}
+list.forEach((item) =>
+    item.addEventListener('click', activeLink));
+</script>

@@ -22,7 +22,7 @@ echo'
 <section class="content">
       <div class="row">
         <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-primary">
+          <div class="small-box bg-primary-gradient">
             <div class="inner">
               <h3>'.$result_count->num_rows.'</h3>
               <p>Pengguna</p>
@@ -31,13 +31,13 @@ echo'
               <i class="fa fa-user"></i>
             </div>
               <a href="./karyawan" class="small-box-footer">
-              Selengkapnya <i class="fa fa-arrow-circle-right"></i>
+              Selengkapnya <i style="margin-left:5px;" class="fa fa-angle-right ml-1"></i>
             </a>
           </div>
         </div>
 
         <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-yellow">
+          <div class="small-box bg-yellow-gradient">
             <div class="inner">
               <h3>'.$result_count_position->num_rows.'</h3>
               <p>Jabatan</p>
@@ -46,13 +46,13 @@ echo'
               <i class="fa fa fa-briefcase"></i>
             </div>
             <a href="./jabatan" class="small-box-footer">
-             Selengkapnya <i class="fa fa-arrow-circle-right"></i>
+             Selengkapnya <i style="margin-left:5px;" class="fa fa-angle-right ml-1"></i>
             </a>
           </div>
         </div>
 
         <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-red">
+          <div class="small-box bg-light-blue-gradient">
             <div class="inner">
               <h3>'.$result_count_building->num_rows.'</h3>
               <p>Lokasi Kantor</p>
@@ -61,13 +61,13 @@ echo'
               <i class="fa fa-building"></i>
             </div>
             <a href="./lokasi" class="small-box-footer">
-              Selengkapnya <i class="fa fa-arrow-circle-right"></i>
+              Selengkapnya <i style="margin-left:5px;" class="fa fa-angle-right ml-1"></i>
             </a>
           </div>
         </div>
 
         <div class="col-lg-3 col-xs-6">
-          <div class="small-box bg-green">
+          <div class="small-box bg-green-gradient">
             <div class="inner">
               <h3>'.$result_count_shift->num_rows.'</h3>
               <p>Shift Kerja</p>
@@ -76,7 +76,7 @@ echo'
               <i class="fa fa-retweet"></i>
             </div>
             <a href="./shift" class="small-box-footer">
-              Selengkapnya <i class="fa fa-arrow-circle-right"></i>
+              Selengkapnya <i style="margin-left:5px;" class="fa fa-angle-right ml-1"></i>
             </a>
           </div>
         </div>
@@ -115,32 +115,29 @@ echo'
 
     }
  $tanggal_visitor = implode('","',$tanggal_visitor);?>
- <script type="text/javascript">
-    var lineChartData = {
-      labels :["<?php echo $tanggal_visitor;?>"],
-      datasets : [
-        {
-          label: "Statistik Absensi",
-          fillColor : "rgba(29,75,251,0.7)",
-          strokeColor : "rgba(220,220,220,1)",
-          pointColor : "rgba(220,220,220,1)",
-          pointStrokeColor : "#fff",
-          pointHighlightFill : "#fff",
-          pointHighlightStroke : "rgba(220,220,220,1)",
-          data :<?php echo json_encode($absensi);?>
+<script type="text/javascript">
+var lineChartData = {
+    labels: ["<?php echo $tanggal_visitor;?>"],
+    datasets: [{
+        label: "Statistik Absensi",
+        fillColor: "rgba(29,75,251,0.7)",
+        strokeColor: "rgba(220,220,220,1)",
+        pointColor: "rgba(220,220,220,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(220,220,220,1)",
+        data: <?php echo json_encode($absensi);?>
 
-        }
-      ]
+    }]
 
-    }
+}
 
-  window.onload = function(){
+window.onload = function() {
     var ctx = document.getElementById("areaChart").getContext("2d");
     window.myLine = new Chart(ctx).Line(lineChartData, {
-      responsive: true
+        responsive: true
     });
-  }
- 
+}
 </script>
 <?PHP
 }?>

@@ -9,30 +9,34 @@ else {
 ?>
 <!DOCTYPE html>
 <html lang="id-ID" xml:lang="id-ID">
+
 <head>
 
-  <!--Title-->
-  <title>Login Admin <?php echo $site_name; ?></title>
+    <!--Title-->
+    <title>Login Admin <?php echo $site_name; ?></title>
 
-  <?php
+    <?php
     include_once '../../library/seo-meta-all.php';
   ?>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="../assets/css/skin-blue-light.css">
-  <link rel="stylesheet" href="../assets/css/font-awesome.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../assets/css/skin-blue-light.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.css">
+    <link rel="stylesheet" href="../assets/css/sw-custom.css">
 
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <!-- Google Font -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <?php echo'
   <body class="hold-transition login-page">
-  <div class="login-box">
+  <div class="login-box header-login">
+    <span class="lingkaran"></span>
     <div class="login-logo">
-      <div style="background:#00B4FF;border-radius:30px;padding:10px 15px" class="section text-center">
-        <h1 style="color:#FFFFFF;font-size:24px;">Login Administrator</h1>
+      <div class="section text-center">
+        <h1 style="color:#FFFFFF;font-size:24px;">Login Admin</h1>
         <a href="'.$site_url.'"><img src="'.$site_url.'/content/'.$site_logo.'" height="70"></a>
       </div>
     </div>
@@ -55,8 +59,7 @@ else {
             <span id="stat"></span>
           </div>
           <div class="col-xs-12">
-            <button type="submit" class="btn btn-success btn-block" id="login"><i class="fa fa-user"></i> Login</button>
-            <a href="../../" class="btn btn-primary btn-block"><i class="fa fa-home"></i> Home</a>
+            <button type="submit" class="btn btn-primary btn-block" id="login"><i class="fa fa-user"></i> Login</button>
           </div>
           <!-- /.col -->
         </div>
@@ -67,15 +70,18 @@ else {
   <!-- /.login-box -->';
 ?>
 
-    <footer class="text-muted text-center">
-      Redeveloped by <a href="https://mycoding.net" rel="dofollow" target="_blank">MC Project</a> - <a href="https://401xd.com" rel="dofollow" target="_blank">401XD Group</a><br/><div style="display: none;"><a class="credits" href="https://s-widodo.com" rel="nofollow" target="_blank"></a></div>
-    </footer>
+<footer class="text-muted text-center">
+    <a href="https://brantassecure.co.id" rel="dofollow" target="_blank">brantassecure.co.id</a> - <a
+        href="https://brantassecure.co.id/tentangkami" rel="dofollow" target="_blank">BSI</a><br />
+    <div style="display: none;"><a class="credits" href="https://s-widodo.com" rel="nofollow" target="_blank"></a></div>
+</footer>
 
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/adminlte.js"></script>
-    <script src="../assets/js/demo.js"></script>
-    <script src="./jquery-login.js"></script>
-  </body>
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/adminlte.js"></script>
+<script src="../assets/js/demo.js"></script>
+<script src="./jquery-login.js"></script>
+</body>
+
 </html>
 <?php }?>

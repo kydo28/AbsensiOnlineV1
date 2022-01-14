@@ -145,10 +145,10 @@ echo'<div class="wrapper">
     <!-- Logo -->
     <a href="./" class="logo">
       <span class="logo-mini">
-        <b style="color:#FFFFFF">AO</b>
+        <img src="'.$site_url.'/content/'.$site_logo.'"  oncontextmenu="return false;" height="40">
       </span>
       <span class="logo-lg">
-        <img src="'.$site_url.'/content/'.$site_logo.'"  oncontextmenu="return false;" height="50">
+        <img src="'.$site_url.'/content/brantassecure.png"  oncontextmenu="return false;" height="35" style="padding-bottom: 5px;">
       </span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -206,12 +206,12 @@ echo'<div class="wrapper">
         <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">'.strip_tags(substr($row_user['fullname'],0,10)).' <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">';?>
-                <li><a href="javascript:void();" onClick="location.href='./logout';"><i class="fa fa-sign-out"></i> Logout</a></li>
-              </ul>
-            </li>
-          
-        </ul>
-      </div>
-    </nav>
-  </header>
+<li><a href="javascript:void();" onClick="location.href='./logout';"><i class="fa fa-sign-out"></i> Logout</a></li>
+</ul>
+</li>
+
+</ul>
+</div>
+</nav>
+</header>
 <?PHP }?>

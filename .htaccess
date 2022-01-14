@@ -19,6 +19,25 @@ RewriteRule ^oauth/google?$ action/sw-google.php [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteRule ^$ index.php?mod=home [L]
 RewriteRule ^(.*)$ index.php?mod=$1 [L]
+# HTID:16324399: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:16324399:
+php_flag output_buffering on
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+RewriteRule ^([^/]+)/$ https://link/$1 [R=301,L]
+
+</IfModule>
+
+
 
 </IfModule>
 <IfModule mod_php5.c>

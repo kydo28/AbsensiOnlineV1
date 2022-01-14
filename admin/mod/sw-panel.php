@@ -25,9 +25,9 @@ echo'<aside class="main-sidebar">
           </a>
           <ul class="treeview-menu">';
             if($mod =='karyawan'){echo'<li class="active">'; }else{echo'<li>';}
-             echo'<a href="./karyawan"><i class="fa fa-circle-o"></i> Data Pengguna</a></li>';
+             echo'<a href="./karyawan"><i class="fa fa-circle-o"></i> Data Pegawai</a></li>';
             if($mod =='jabatan'){echo'<li class="active">'; }else{echo'<li>';}
-             echo'<a href="./jabatan"><i class="fa fa-circle-o"></i> Data Jabatan</a></li>';
+             echo'<a href="./jabatan"><i class="fa fa-circle-o"></i> Data Pekerjaan</a></li>';
             if($mod =='shift'){echo'<li class="active">'; }else{echo'<li>';}
              echo'<a href="shift"><i class="fa fa-circle-o"></i> Data Jam Kerja</a></li>';
             if($mod =='lokasi'){echo'<li class="active">'; }else{echo'<li>';}
@@ -43,8 +43,9 @@ echo'<aside class="main-sidebar">
 
       if($mod =='user'){echo'<li class="active">'; }else{echo'<li>';}
       echo'<a href="./user"><i class="fa fa-user"></i> <span>Administrator</span></a></li>';?>
-      <li><a href="javascript:void();" onClick="location.href='./logout';"><i class="fa fa-sign-out"></i>  <span>Keluar</span></a></li>
-  <?php echo'
+<li><a href="javascript:void();" onClick="location.href='./logout';"><i class="fa fa-sign-out"></i>
+        <span>Keluar</span></a></li>
+<?php echo'
       </ul>
     </section>
   </div>

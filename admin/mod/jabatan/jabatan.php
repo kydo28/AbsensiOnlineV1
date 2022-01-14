@@ -9,10 +9,10 @@ echo'
     default:
 echo'
 <section class="content-header">
-  <h1>Data<small> Jabatan</small></h1>
+  <h1>Data<small> Pekerjaan</small></h1>
     <ol class="breadcrumb">
       <li><a href="./"><i class="fa fa-dashboard"></i> Beranda</a></li>
-      <li class="active">Data Jabatan</li>
+      <li class="active">Data Pekerjaan</li>
     </ol>
 </section>';
 echo'
@@ -21,7 +21,7 @@ echo'
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="box box-solid">
         <div class="box-header with-border">
-          <h3 class="box-title"><b>Data Jabatan</b></h3>
+          <h3 class="box-title"><b>Data Pekerjaan</b></h3>
           <div class="box-tools pull-right">';
           if($level_user==1){
             echo'
@@ -38,7 +38,7 @@ echo'
   <thead>
   <tr>
     <th style="width:20px" class="text-center">No</th>
-    <th>Nama Jabatan</th>
+    <th>Nama Pekerjaan</th>
     <th style="width:120px">Aksi</th>
   </tr>
   </thead>
@@ -57,8 +57,11 @@ echo'
         <div class="btn-group">';
         if($level_user==1){
           echo'
-          <a href="#modalEdit" class="btn btn-warning btn-xs enable-tooltip" title="Edit" data-toggle="modal"';?> onclick="getElementById('txtid').value='<?PHP echo $row['position_id'];?>';getElementById('txtnama').value='<?PHP echo $row['position_name'];?>';"><i class="fa fa-pencil-square-o"></i> Ubah</a>
-      <?php echo'
+          <a href="#modalEdit" class="btn btn-warning btn-xs enable-tooltip" title="Edit" data-toggle="modal"';?>
+onclick="getElementById('txtid').value='
+<?PHP echo $row['position_id'];?>';getElementById('txtnama').value='
+<?PHP echo $row['position_name'];?>';"><i class="fa fa-pencil-square-o"></i> Ubah</a>
+<?php echo'
       <buton data-id="'.epm_encode($row['position_id']).'" class="btn btn-xs btn-danger delete" title="Hapus"><i class="fa fa-trash-o"></i> Hapus</button>';}
       else {
         echo'
@@ -89,7 +92,7 @@ echo'
       <form id="validate" class="form add-jabatan">
       <div class="modal-body">
         <div class="form-group">
-            <label>Nama Jabatan</label>
+            <label>Nama Pekerjaan</label>
             <input type="text" class="form-control" name="position_name" id="nama" required>
         </div>
       </div>

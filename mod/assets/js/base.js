@@ -51,11 +51,3 @@ $(".toggle-searchbox").click(function () {
     $("#search").fadeToggle(200);
     $("#search .form-control").focus();
 });
-
-
-$(document).ready(function () {
-    $('.headerButton').on('click', function () {
-
-        $('.animated-icon1').toggleClass('open');
-    });
-});

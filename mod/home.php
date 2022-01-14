@@ -19,55 +19,56 @@ if ($mod ==''){
 }
 ?>
 <script>
-  const weekdayz = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
-        const fullMonth=["Januari","Februari",'Maret',"April",'Mei',"Juni","Juli",'Agustus','September','Oktober','November','Desember']
-        const d=new Date()
-        let date=d.getDate();
-        let month=fullMonth[d.getMonth()];
-        let year=d.getFullYear();
-        let day=weekdayz[d.getDay()];
+const weekdayz = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+const fullMonth = ["Januari", "Februari", 'Maret', "April", 'Mei', "Juni", "Juli", 'Agustus', 'September', 'Oktober',
+    'November', 'Desember'
+]
+const d = new Date()
+let date = d.getDate();
+let month = fullMonth[d.getMonth()];
+let year = d.getFullYear();
+let day = weekdayz[d.getDay()];
 
 
-    window.addEventListener('load',(event)=>{
-        var path=window.location.pathname.replace('/AbsensiOnlineV1/','')
-        switch(path){
-            case '': 
-                $('.layout').load('./home2')
-                break;
-            case 'home':
-                $('.layout').load('./home2')
-                break;  
-        }
-        document.getElementById('day').innerHTML=day+','+date+' '+month+' '+year;
-    })
-    document.getElementById('absen').addEventListener('click',(event)=>{
-        event.preventDefault()
-        if(day=="Sabtu" || day=="Minggu"){
-           alert('Maaf Hari ini sedang libur')
-        }
-        else{
-            $('.layout').load('./present')
-        }
-       
-    })
+window.addEventListener('load', (event) => {
+    var path = window.location.pathname.replace('/AbsensiOnlineV1/', '')
+    switch (path) {
+        case '':
+            $('.layout').load('./home2')
+            break;
+        case 'home':
+            $('.layout').load('./home2')
+            break;
+    }
+    document.getElementById('day').innerHTML = day + ',' + date + ' ' + month + ' ' + year;
+})
+document.getElementById('absen').addEventListener('click', (event) => {
+    event.preventDefault()
+    if (day == "Sabtu" || day == "Minggu") {
+        alert('Maaf Hari ini sedang libur')
+    } else {
+        $('.layout').load('./present')
+    }
+
+})
 
 
-    
-const array_nav=['home','profile','absen','id-card','riwayat']
-const array_side=[]
-const array_route=['./home2','./profile','./present','./id-card','./history']
 
-array_nav.forEach((item)=>array_side.push("side-"+item))
+const array_nav = ['home', 'profile', 'absen', 'id-card', 'riwayat']
+const array_side = []
+const array_route = ['./home2', './profile', './present', './id-card', './history']
+
+array_nav.forEach((item) => array_side.push("side-" + item))
 
 ///Navbar bottom
 const lists = document.querySelectorAll('.list');
 const list_sidebar = document.querySelectorAll('.list-sidebar');
 
 function activeLinks() {
-    var menu=$(this).attr('id')
-    list_sidebar.forEach((item)=>item.classList.remove('active'))
-    array_nav.forEach((item,i)=>{
-        if(menu==item){
+    var menu = $(this).attr('id')
+    list_sidebar.forEach((item) => item.classList.remove('active'))
+    array_nav.forEach((item, i) => {
+        if (menu == item) {
             $('.layout').load(array_route[i])
             list_sidebar[i].classList.add('active')
         }
@@ -75,7 +76,7 @@ function activeLinks() {
     lists.forEach((item) =>
         item.classList.remove('active'));
     this.classList.add('active');
-   
+
 }
 
 
@@ -84,23 +85,22 @@ lists.forEach((item) =>
 // Sidebar 
 
 function activeLink() {
-    var menu=$(this).attr('id')   
-    lists.forEach((item)=>item.classList.remove('active'))
-    array_side.forEach((item,i)=>{
-        if(menu==item){
+    var menu = $(this).attr('id')
+    lists.forEach((item) => item.classList.remove('active'))
+    array_side.forEach((item, i) => {
+        if (menu == item) {
             $('.layout').load(array_route[i])
             lists[i].classList.add('active')
-            return 
+            return
         }
-        if(menu=='side-logout'){
-            window.location.href='./logout'
+        if (menu == 'side-logout') {
+            window.location.href = './logout'
             return
         }
     })
-    list_sidebar.forEach((item) =>item.classList.remove('active'));
+    list_sidebar.forEach((item) => item.classList.remove('active'));
     this.classList.add('active');
 }
 list_sidebar.forEach((item) =>
     item.addEventListener('click', activeLink));
-
 </script>

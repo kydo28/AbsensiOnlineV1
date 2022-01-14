@@ -1,4 +1,3 @@
-
 <script src="'.$base_url.'mod/assets/js/lib/jquery-3.4.1.min.js"></script>
 <?php 
 if ($mod ==''){
@@ -25,42 +24,6 @@ if ($mod ==''){
                   </div>
               </div>
               <!-- * Balance -->
-              <!-- Wallet Footer -->
-              <div class="wallet-footer">
-                  <div class="item">
-                      <a href="./profile">
-                          <div class="icon-wrapper bg-primary">
-                              <ion-icon name="person-outline"></ion-icon>
-                          </div>
-                          <strong>Profil</strong>
-                      </a>
-                  </div>
-                  <div class="item">
-                      <span type="button" id="absen">
-                          <div class="icon-wrapper bg-success">
-                              <ion-icon name="camera-outline"></ion-icon>
-                          </div>
-                          <strong>Absen</strong>
-                      </span>
-                  </div>
-                  <div class="item">
-                      <a href="./id-card">
-                          <div class="icon-wrapper bg-warning">
-                              <ion-icon name="id-card-outline"></ion-icon>
-                          </div>
-                          <strong>ID Card</strong>
-                      </a>
-                  </div>
-                  <div class="item">
-                      <a href="./history">
-                          <div class="icon-wrapper bg-danger">
-                              <ion-icon name="document-text-outline"></ion-icon>
-                          </div>
-                          <strong>Riwayat</strong>
-                      </a>
-                  </div>
-              </div>
-              <!-- * Wallet Footer -->
           </div>
       </div>
       <!-- Wallet Card -->
@@ -110,26 +73,27 @@ if ($mod ==''){
 
 ?>
 <script>
-  const weekday = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
-        const fullMonth=["Januari","Februari",'Maret',"April",'Mei',"Juni","Juli",'Agustus','September','Oktober','November','Desember']
-        const d=new Date()
-        let date=d.getDate();
-        let month=fullMonth[d.getMonth()];
-        let year=d.getFullYear();
-        let day=weekday[d.getDay()];
+const weekday = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+const fullMonth = ["Januari", "Februari", 'Maret', "April", 'Mei', "Juni", "Juli", 'Agustus', 'September', 'Oktober',
+    'November', 'Desember'
+]
+const d = new Date()
+let date = d.getDate();
+let month = fullMonth[d.getMonth()];
+let year = d.getFullYear();
+let day = weekday[d.getDay()];
 
 
-    window.addEventListener('load',(event)=>{
-        document.getElementById('day').innerHTML=day+','+date+' '+month+' '+year;
-    })
-    document.getElementById('absen').addEventListener('click',(event)=>{
-        event.preventDefault()
-        if(day=="Sabtu" || day=="Minggu"){
-           alert('Maaf Hari ini sedang libur')
-        }
-        else{
-            window.location.href="./present"
-        }
-       
-    })
+window.addEventListener('load', (event) => {
+    document.getElementById('day').innerHTML = day + ',' + date + ' ' + month + ' ' + year;
+})
+document.getElementById('absen').addEventListener('click', (event) => {
+    event.preventDefault()
+    if (day == "Sabtu" || day == "Minggu") {
+        alert('Maaf Hari ini sedang libur')
+    } else {
+        window.location.href = "./present"
+    }
+
+})
 </script>

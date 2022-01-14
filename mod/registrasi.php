@@ -26,23 +26,30 @@ $kode_karyawan = $huruf . sprintf("%03s", $urutan);
                     <div class="card-body pb-1">
                         <div class="form-group basic">
                             <div class="input-wrapper">
-                                <label class="label">Nama</label>
-                                <input type="text" class="form-control" id="name" name="employees_name" placeholder="Nama Lengkap" required>
+                                <label class="label">NIP</label>
+                                <input type="text" class="form-control" style="padding-left:0%;" id="name" name="employees_nip" placeholder="Nomer Induk Pegawai" required>
                                 <i class="clear-input"><ion-icon name="close-circle"></ion-icon></i>
                             </div>
                         </div>
                         <div class="form-group basic">
                             <div class="input-wrapper">
-                                <label class="label">E-mail</label>
-                                <input type="email" class="form-control" id="email" name="employees_email" placeholder="Masukkan E-mail" required>
+                                <label class="label">Nama</label>
+                                <input type="text" class="form-control" style="padding-left:0%;" id="name" name="employees_name" placeholder="Nama Lengkap" required>
+                                <i class="clear-input"><ion-icon name="close-circle"></ion-icon></i>
+                            </div>
+                        </div>
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="label">Email</label>
+                                <input type="email" class="form-control" style="padding-left:0%;" id="email" name="employees_email" placeholder="Masukkan Email" required>
                                 <i class="clear-input"><ion-icon name="close-circle"></ion-icon></i>
                             </div>
                         </div>
                         <div class="form-group basic">
                         <div class="input-wrapper">
-                            <label class="label">Position</label>
-                            <select class="form-control" name="position_id" id="position_id"  required="">
-                              <option value="">- Pilih -</option>';
+                            <label class="label">Pekerjaan</label>
+                            <select class="form-control" style="padding-left:0%;" name="position_id" id="position_id"  required="">
+                              <option value="">Pilih Pekerjaan</option>';
                               $query="SELECT position_id,position_name from position order by position_name ASC";
                                   $result = $connection->query($query);
                                   while($row = $result->fetch_assoc()) { 
@@ -54,8 +61,8 @@ $kode_karyawan = $huruf . sprintf("%03s", $urutan);
                     <div class="form-group basic">
                             <div class="input-wrapper">
                                 <label class="label">Perusahaan</label>
-                                <select class="form-control" name="shift_id" id="shift_id" required="">
-                                  <option value="">- Pilih -</option>';
+                                <select class="form-control" style="padding-left:0%;" name="shift_id" id="shift_id" required="">
+                                  <option value="">Pilih Perusahaan</option>';
                                   $query="SELECT * from perusahaan order by name ASC";
                                   $result = $connection->query($query);
                                   while($row = $result->fetch_assoc()) { 
@@ -65,13 +72,11 @@ $kode_karyawan = $huruf . sprintf("%03s", $urutan);
                             </div>
                         </div>
 
-
-                     
                         <div class="form-group basic">
                             <div class="input-wrapper">
-                                <label class="label">Shift</label>
-                                <select class="form-control" name="shift_id" id="shift_id" required="">
-                                  <option value="">- Pilih -</option>';
+                                <label class="label">Jam kerja</label>
+                                <select class="form-control" style="padding-left:0%;" name="shift_id" id="shift_id" required="">
+                                  <option value="">Pilih Jam kerja</option>';
                                   $query="SELECT shift_id,shift_name from shift order by shift_name ASC";
                                   $result = $connection->query($query);
                                   while($row = $result->fetch_assoc()) { 
@@ -83,9 +88,9 @@ $kode_karyawan = $huruf . sprintf("%03s", $urutan);
 
                         <div class="form-group basic">
                             <div class="input-wrapper">
-                                <label class="label">Lokasi</label>
-                                <select class="form-control" name="building_id" id="building" required="">
-                                  <option value="">- Pilih -</option>';
+                                <label class="label">Lokasi Penempatan</label>
+                                <select class="form-control" style="padding-left:0%;" name="building_id" id="building" required="">
+                                  <option value="">Pilih Lokasi Penempatan</option>';
                                   $query="SELECT building_id,name,address from building order by name ASC";
                                   $result = $connection->query($query);
                                   while($row = $result->fetch_assoc()) { 
@@ -98,7 +103,7 @@ $kode_karyawan = $huruf . sprintf("%03s", $urutan);
                         <div class="form-group basic">
                         <div class="input-wrapper">
                             <label class="label" for="password1">Password</label>
-                            <input type="password" class="form-control" id="password" name="employees_password"  placeholder="Masukkan password" required>
+                            <input type="password" class="form-control" style="padding-left:0%;" id="password" name="employees_password"  placeholder="Masukkan password" required>
                         </div>
                     </div>
                 </div>

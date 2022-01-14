@@ -33,10 +33,10 @@ echo'
             <thead>
             <tr>
               <th style="width: 10px">No</th>
-              <th>ID Pengguna</th>
+              <th>NIP</th>
               <th>Nama</th>
               <th>Email</th>
-              <th>Jabatan</th>
+              <th>Pekerjaan</th>
               <th>Shift</th>
               <th>Lokasi</th>
               <th style="width:120px" class="text-right">Aksi</th>
@@ -52,7 +52,7 @@ echo'
               echo'
               <tr>
                 <td class="text-center">'.$no.'</td>
-                <td>'.$row['employees_code'].'</td>
+                <td>'.$row['employees_nip'].'</td>
                 <td>'.$row['employees_name'].'</td>
                 <td>'.$row['employees_email'].'</td>
                 <td>'.$row['position_name'].'</td>
@@ -143,7 +143,7 @@ echo'
   <h1>Detail<small> Absensi</small></h1>
     <ol class="breadcrumb">
       <li><a href="./"><i class="fa fa-dashboard"></i> Beranda</a></li>
-      <li><a href="#" onclick="history.back()">Data Abseni</a></li>
+      <li><a href="#" onclick="history.back()">Data Absen</a></li>
       <li class="active">Detail Absen</li>
     </ol>
 </section>
@@ -168,7 +168,7 @@ echo'
           $row = $result->fetch_assoc();
         echo'
         <h4>Nama   : <span class="employees_name">'.$row['employees_name'].'</span></h4>
-        <h4>Devisi : '.$row['position_name'].'</h4>
+        <h4>Pekerjaan : '.$row['position_name'].'</h4>
         <hr>
         <div class="row">
           <div class="col-md-4">

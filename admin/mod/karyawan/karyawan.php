@@ -9,10 +9,10 @@ switch(@$_GET['op']){
     default:
 echo'
 <section class="content-header">
-  <h1>Data<small> Pengguna</small></h1>
+  <h1>Data<small> Pegawai</small></h1>
     <ol class="breadcrumb">
       <li><a href="./"><i class="fa fa-dashboard"></i> Beranda</a></li>
-      <li class="active">Data Pengguna</li>
+      <li class="active">Data Pegawai</li>
     </ol>
 </section>';
 echo'
@@ -21,7 +21,7 @@ echo'
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="box box-solid">
         <div class="box-header with-border">
-          <h3 class="box-title"><b>Data Pengguna</b></h3>
+          <h3 class="box-title"><b>Data Pegawai</b></h3>
           <div class="box-tools pull-right">';
           if($level_user==1){
             echo'
@@ -36,10 +36,10 @@ echo'
   <thead>
   <tr>
     <th style="width: 10px">No</th>
-    <th>ID Pengguna</th>
+    <th>NIP</th>
     <th>Nama</th>
     <th>Email</th>
-    <th>Jabatan</th>
+    <th>Pekerjaan</th>
     <th>Shift</th>
     <th>Lokasi</th>
     <th style="width:120px" class="text-right">Aksi</th>
@@ -55,7 +55,7 @@ echo'
     echo'
     <tr>
       <td class="text-center">'.$no.'</td>
-      <td>'.$row['employees_code'].'</td>
+      <td>'.$row['employees_nip'].'</td>
       <td>'.$row['employees_name'].'</td>
       <td>'.$row['employees_email'].'</td>
       <td>'.$row['position_name'].'</td>
@@ -90,11 +90,11 @@ break;
 case 'add':
 echo'
 <section class="content-header">
-  <h1>Tambah Data<small> Pengguna</small></h1>
+  <h1>Tambah Data<small> Pegawai</small></h1>
     <ol class="breadcrumb">
       <li><a href="./"><i class="fa fa-dashboard"></i> Beranda</a></li>
-      <li><a href="./karyawan"> Data Pengguna</a></li>
-      <li class="active">Tambah Pengguna</li>
+      <li><a href="./karyawan"> Data Pegawai</a></li>
+      <li class="active">Tambah Pegawai</li>
     </ol>
 </section>';
 echo'
@@ -103,7 +103,7 @@ echo'
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <div class="box box-solid">
         <div class="box-header with-border">
-          <h3 class="box-title"><b>Tambah Data Pengguna</b></h3>
+          <h3 class="box-title"><b>Tambah Data Pegawai</b></h3>
         </div>
 
         <div class="box-body">
@@ -113,7 +113,7 @@ echo'
                 <div class="form-group">
                   <label class="col-sm-2 control-label">Username</label>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control" name="employees_code" required>
+                    <input type="text" class="form-control" name="employees_nip" required>
                   </div>
                 </div>
 
@@ -139,7 +139,7 @@ echo'
                 </div>
 
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Jabatan</label>
+                  <label class="col-sm-2 control-label">Pekerjaan</label>
                   <div class="col-sm-6">
                    <select class="form-control" name="position_id" required="">
                       <option value="">- Pilih -</option>';
@@ -208,11 +208,11 @@ break;
 case 'edit':
 echo'
 <section class="content-header">
-  <h1>Edit Data<small> Pengguna</small></h1>
+  <h1>Edit Data<small> Pegawai</small></h1>
     <ol class="breadcrumb">
       <li><a href="./"><i class="fa fa-dashboard"></i> Beranda</a></li>
-      <li><a href="./karyawan"> Data Pengguna</a></li>
-      <li class="active">Edit Pengguna</li>
+      <li><a href="./karyawan"> Data Pegawai</a></li>
+      <li class="active">Edit Pegawai</li>
     </ol>
 </section>
 
@@ -258,7 +258,7 @@ echo'
 
                 
                 <div class="form-group">
-                  <label class="col-sm-2 control-label">Jabatan</label>
+                  <label class="col-sm-2 control-label">Pekerjaan</label>
                   <div class="col-sm-6">
                    <select class="form-control" name="position_id" required="">
                       <option value="">- Pilih -</option>';

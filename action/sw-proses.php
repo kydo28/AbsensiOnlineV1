@@ -82,6 +82,11 @@ $employees_code = ''.$kode_karyawan.'-'.$year.'';
 
 $error = array();
 
+  if (empty($_POST['employees_nip'])) {
+      $error[] = 'tidak boleh kosong';
+    } else {
+      $employees_nip= mysqli_real_escape_string($connection, $_POST['employees_nip']);
+  }
   if (empty($_POST['employees_name'])) {
       $error[] = 'tidak boleh kosong';
     } else {
@@ -139,7 +144,11 @@ if (filter_var($employees_email, FILTER_VALIDATE_EMAIL)) {
   $query="SELECT employees_email from employees where employees_email='$employees_email'";
   $result= $connection->query($query) or die($connection->error.__LINE__);
   if(!$result ->num_rows >0){
-    $add ="INSERT INTO employees (employees_code,
+    $query="SELECT employees_nip from employees where employees_nip='$employees_nip'";
+    $result= $connection->query($query) or die($connection->error.__LINE__);
+    if(!$result ->num_rows >0){
+      $add ="INSERT INTO employees (employees_nip,
+              employees_code,
               employees_email,
               employees_password,
               employees_name,
@@ -148,7 +157,8 @@ if (filter_var($employees_email, FILTER_VALIDATE_EMAIL)) {
               building_id,
               photo,
               created_login,
-              created_cookies) values('$employees_code',
+              created_cookies) values('$employees_nip',
+              '$employees_code',
               '$employees_email',
               '$employees_password',
               '$employees_name',
@@ -164,11 +174,14 @@ if (filter_var($employees_email, FILTER_VALIDATE_EMAIL)) {
     } else{
         echo'success';
         mail($to, $subject, $pesan, $headers);
+    }
+    }
+    else {
+      echo'NIP "'.$employees_nip.'" sudah terdaftar!';
     }}
     else   {
       echo'Sepertinya Email "'.$employees_email.'" sudah terdaftar!';
     }}
-
     else {
      echo'Email yang anda masukkan salah!';
     }}
@@ -219,7 +232,7 @@ if (filter_var($employees_email, FILTER_VALIDATE_EMAIL)) {
     $update ="UPDATE employees SET employees_password='$employees_password' WHERE employees_email='$row[employees_email]'";
     if($connection->query($update) === false) { 
         die($connection->error.__LINE__); 
-        echo'Penyetelan password baru gagal, silahkan nanti coba kembali!';
+        echo'Penyetelan password baru gagal, silahkan mencoba kembali nanti!';
     } else{
         echo'success';
         mail($to, $subject, $pesan, $headers);
@@ -684,11 +697,16 @@ echo'
 </div>';?>
 
 <script>
-  $('#swdatatable').dataTable({
-    "iDisplayLength":35,
-    "aLengthMenu": [[35, 40, 50, -1], [35, 40, 50, "All"]]
-  });
-  $('.image-link').magnificPopup({type:'image'});
+$('#swdatatable').dataTable({
+    "iDisplayLength": 35,
+    "aLengthMenu": [
+        [35, 40, 50, -1],
+        [35, 40, 50, "All"]
+    ]
+});
+$('.image-link').magnificPopup({
+    type: 'image'
+});
 </script>
 <?php
   break;

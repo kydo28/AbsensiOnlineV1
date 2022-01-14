@@ -243,5 +243,9 @@ echo'<!-- App Sidebar -->
  }?>
 
 <script>
-
+$(document).ready(function() {
+    $('.headerButton').on('click', function() {
+        $('.animated-icon1').toggleClass('open');
+    });
+});
 </script>

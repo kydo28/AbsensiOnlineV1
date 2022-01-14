@@ -41,7 +41,7 @@ echo'
     <th style="width:20px" class="text-center">No</th>
     <th>Nama Lokasi</th>
     <th>Alamat</th>
-    <th class="text-center">Jumlah Pengguna</th>
+    <th class="text-center">Jumlah Pegawai</th>
     <th style="width:170px" class="text-center">Aksi</th>
   </tr>
   </thead>
@@ -65,8 +65,12 @@ echo'
           if($level_user == 1){
           echo'
           <a href="'.$mod.'&op=view&id='.epm_encode($row['building_id']).'" class="btn btn-xs btn-primary" title="QR CODE"><i class="fa fa-eye" aria-hidden="true"></i> View</button>
-          <a href="#modalEdit" class="btn btn-warning btn-xs enable-tooltip" title="Edit" data-toggle="modal"';?> onclick="getElementById('txtid').value='<?PHP echo $row['building_id'];?>';getElementById('txtname').value='<?PHP echo $row['name'];?>';getElementById('txtaddress').value='<?PHP echo $row['address'];?>';"><i class="fa fa-pencil-square-o"></i> Ubah</a>
-          <?php echo'
+          <a href="#modalEdit" class="btn btn-warning btn-xs enable-tooltip" title="Edit" data-toggle="modal"';?>
+onclick="getElementById('txtid').value='
+<?PHP echo $row['building_id'];?>';getElementById('txtname').value='
+<?PHP echo $row['name'];?>';getElementById('txtaddress').value='
+<?PHP echo $row['address'];?>';"><i class="fa fa-pencil-square-o"></i> Ubah</a>
+<?php echo'
           <buton data-id="'.epm_encode($row['building_id']).'" class="btn btn-xs btn-danger delete" title="Hapus"><i class="fa fa-trash-o"></i> Hapus</button>';}
         else{
         echo'

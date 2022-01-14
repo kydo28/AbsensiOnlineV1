@@ -256,6 +256,11 @@ $ratio_ori  = $width / $height_new;
 $tmp=imagecreatetruecolor($width_new,$height_new);
 imagecopyresampled($tmp,$src,0,0,0,0,$width_new,$height_new,$width,$height);
 
+$m = date("m"); // Month value
+$de = date("d"); // Today's date
+$y = date("Y"); // Year value
+
+$yesterday= date('d-m-Y', mktime(0,0,0,$m,($de-1),$y));
 if (empty($_GET['latitude'])) {
       $error[] = 'tidak boleh kosong';
     } else {
@@ -266,30 +271,124 @@ if (empty($_GET['latitude'])) {
   $result_u = $connection->query($query_u);
   if($result_u->num_rows > 0){
       $row_u = $result_u->fetch_assoc();
-    
-      // Cek data Absen Berdasarkan tanggal sekarang
-      $query  ="SELECT employees_id,time_in FROM presence WHERE employees_id='$row_u[id]' AND presence_date='$date'";
-      $result = $connection->query($query);
-      $row = $result->fetch_assoc();
-      if($result->num_rows > 0){
-        // Update Absensi Pulang
-        $query  ="SELECT time_out,employees_id FROM presence WHERE employees_id='$row_u[id]' AND presence_date='$date'";
+      
+        $check_shift="SELECT * FROM SHIFT where shift_id=".$row_u['shift_id']."";
+        $result_check_shift=$connection->query($check_shift);
+        $row_check_shift=$result_check_shift->fetch_assoc();
+        $jamkeluar=$row_check_shift['time_out'];
+        $jammasuk3=$row_check_shift['time_in'];
+        
+       if($row_u['shift_id']==6){
+              // Cek data Absen Berdasarkan tanggal sekarang/
+        $query  ="SELECT * FROM presence WHERE employees_id='$row_u[id]'AND time_out='00:00:00'";
         $result = $connection->query($query);
         $row = $result->fetch_assoc();
-          if($result->num_rows > 0){
-            if($row['time_out']=='00:00:00'){
-            //Update Jam Pulang
-            	$filename =''.seo_title($row_user['employees_name']).'-out-'.$date.'-'.$row_user['id'].'.jpg';
-      			$directory= "../content/present/".$filename;
 
-              $update ="UPDATE presence SET time_out='$time',picture_out='$filename' WHERE employees_id='$row_u[id]' AND presence_date='$date'";
-              if($connection->query($update) === false) { 
-                  die($connection->error.__LINE__); 
-                  echo'Sepetinya sitem kami sedang error!';
-              } else{
-                  //Jam Pulang
-                  echo'success/Selamat "'.$row_user['employees_name'].'" berhasil Absen Pulang pada Tanggal '.tanggal_ind($date).' dan Jam : '.$time.', Hati-hati dijalan saat pulang "'.$row_a['employees_name'].'"!';
-                  imagejpeg($tmp,$directory,80);
+         
+        if($result->num_rows > 0 ) {
+          // Update Absensi Pulang
+          $query  ="SELECT * FROM presence WHERE employees_id='$row_u[id]' AND time_out='00:00:00'";
+          $result = $connection->query($query);
+          //query jam keluar 
+           
+            
+            $row = $result->fetch_assoc();
+            if($result->num_rows > 0 ){
+              if($row['time_out']=='00:00:00'){
+               //Update Jam Pulang
+                if($time<($jamkeluar))
+                {
+                  echo 'Hanya bisa absen pulang setelah jam : '.$row_check_shift['time_out'];
+                }
+              else{
+                $filename =''.seo_title($row_user['employees_name']).'-out-'.$yesterday.'-'.$row_user['id'].'.jpg';
+                $directory= "../content/present/".$filename;
+  
+                  $update ="UPDATE presence SET time_out='$time',picture_out='$filename',presence_date_out='$date' WHERE employees_id='$row_u[id]' AND time_out='00:00:00'";
+                  
+                  if($connection->query($update) === false) { 
+                      die($connection->error.__LINE__); 
+                      echo'Sepetinya sitem kami sedang error!';
+                  } else{
+                      //Jam Pulang
+                      echo'success/Selamat "'.$row_user['employees_name'].'" berhasil Absen Pulang pada Tanggal '.tanggal_ind($yesterday).' dan Jam : '.$time.', Hati-hati dijalan saat pulang "'.$row_a['employees_name'].'"!';
+                      imagejpeg($tmp,$directory,80);
+                  }
+                }
+              }     
+            else{
+              echo'Sebelumnya "'.$row_user['employees_name'].'" sudah pernah Absen Pulang pada Tanggal '.tanggal_ind($date).' dan Jam '.$row['time_out'].'.!';
+            }
+          }
+        }else{
+         if(date('H:i:s', (time() + 60 * 30))<($jammasuk3)){
+          echo 'Hanya bisa absen masuk 30 menit sebelum jam :'.$jammasuk3;
+         }
+         else{
+             // Add Absen Masuk ---------------------------------------
+             $filename =''.seo_title($row_user['employees_name']).'-in-'.$date.'-'.$row_user['id'].'.jpg';
+             $directory= "../content/present/".$filename;
+             $add ="INSERT INTO presence (employees_id,
+                               presence_date,
+                               time_in,
+                               time_out,
+                               picture_in,
+                               picture_out,
+                               present_id,
+                               presence_address,
+                               information) values('$row_u[id]',
+                               '$date',
+                               '$time',
+                               '00:00:00',
+                               '$filename',
+                               '', /*picture out kosong*/
+                               '1', /*hadir*/
+                               '$latitude',
+                               '')";
+                     
+             if($connection->query($add) === false) { 
+                 die($connection->error.__LINE__); 
+                 echo'Sepertinya Sistem Kami sedang error!';
+             } else{
+               
+                 echo'success/Selamat Anda berhasil Absen Masuk pada Tanggal '.$jammasuk3.' dan Jam : '.$time.', Semangat bekerja "'.$row_u['employees_name'].'" !';
+                 imagejpeg($tmp,$directory,80);
+           }
+         } 
+        }   
+      }
+             
+       else{
+         // Cek data Absen Berdasarkan tanggal sekarang
+        $query  ="SELECT * FROM presence WHERE employees_id='$row_u[id]' AND presence_date='$date'   ";
+      $result = $connection->query($query);
+      $row = $result->fetch_assoc();
+      if($result->num_rows > 0 || $row['time_in']>='23:00:00') {
+        // Update Absensi Pulang
+        $query  ="SELECT * FROM presence WHERE employees_id='$row_u[id]' AND  presence_date='$date'";
+        $result = $connection->query($query);
+        $row = $result->fetch_assoc();
+          if($result->num_rows > 0 ){
+            if($row['time_out']=='00:00:00'){
+              if($time<($jamkeluar))
+              {
+                echo 'Hanya bisa absen pulang setelah jam : '.$row_check_shift['time_out'];
+              }
+              else{
+                   //Update Jam Pulang
+            	$filename =''.seo_title($row_user['employees_name']).'-out-'.$date.'-'.$row_user['id'].'.jpg';
+              $directory= "../content/present/".$filename;
+  
+                $update ="UPDATE presence SET time_out='$time',picture_out='$filename',presence_date_out='$date' WHERE employees_id='$row_u[id]' AND presence_date='$date'";
+                
+                if($connection->query($update) === false) { 
+                    die($connection->error.__LINE__); 
+                    echo'Sepetinya sitem kami sedang error!';
+                } else{
+                    //Jam Pulang
+                    echo'success/Selamat "'.$jamkeluar.'" berhasil Absen Pulang pada Tanggal '.tanggal_ind($date).' dan Jam : '.$time.', Hati-hati dijalan saat pulang "'.$row_a['employees_name'].'"!';
+                    imagejpeg($tmp,$directory,80);
+                }
               }
             }
           else{
@@ -297,8 +396,12 @@ if (empty($_GET['latitude'])) {
           }
         }
       }else{
-        // Add Absen Masuk ---------------------------------------
-        	$filename =''.seo_title($row_user['employees_name']).'-in-'.$date.'-'.$row_user['id'].'.jpg';
+        // Add Absen Masuk --
+        if(date('H:i:s', (time() + 60 * 30))<($jammasuk3)){
+          echo 'Hanya bisa absen masuk 30 menit sebelum jam :'.$jammasuk3;
+         }
+         else{
+          $filename =''.seo_title($row_user['employees_name']).'-in-'.$date.'-'.$row_user['id'].'.jpg';
       		$directory= "../content/present/".$filename;
           $add ="INSERT INTO presence (employees_id,
                             presence_date,
@@ -322,11 +425,16 @@ if (empty($_GET['latitude'])) {
               die($connection->error.__LINE__); 
               echo'Sepertinya Sistem Kami sedang error!';
           } else{
+            
               echo'success/Selamat Anda berhasil Absen Masuk pada Tanggal '.tanggal_ind($date).' dan Jam : '.$time.', Semangat bekerja "'.$row_u['employees_name'].'" !';
               imagejpeg($tmp,$directory,80);
         }
+         }
+        
+        	
       } 
-
+    }
+             
   }
   else{
     // Jika user tidak ditemukan

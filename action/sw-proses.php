@@ -285,7 +285,7 @@ if (empty($_GET['latitude'])) {
   if($result_u->num_rows > 0){
       $row_u = $result_u->fetch_assoc();
       
-        $check_shift="SELECT * FROM SHIFT where shift_id=".$row_u['shift_id']."";
+        $check_shift="SELECT shift_id,time_in,time_out FROM shift where shift_id=".$row_u['shift_id']."";
         $result_check_shift=$connection->query($check_shift);
         $row_check_shift=$result_check_shift->fetch_assoc();
         $jamkeluar=$row_check_shift['time_out'];

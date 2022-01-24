@@ -8,40 +8,40 @@ echo'
 
 <div class="navigation">
     <ul>
-        <li class="list active">
-            <a class="klik_menu" id="home">
+        <li class="list active" id="home">
+            <a class="klik_menu" >
                 <span class="icon">
                     <ion-icon name="home-outline" href="home"></ion-icon>
                 </span>
                 <span class="text">Home</span>
             </a>
         </li>
-        <li class="list">
-            <a class="klik_menu" id="profile">
+        <li class="list" id="profile">
+            <a class="klik_menu" >
                 <span class="icon">
                     <ion-icon name="person-outline"></ion-icon>
                 </span>
                 <span class="text">Profil</span>
             </a>
         </li>
-        <li class="list">
-            <a class="klik_menu" id="absen">
+        <li class="list" id="absen">
+            <a class="klik_menu" >
                 <span class="icon">
                     <ion-icon name="camera-outline"></ion-icon>
                 </span>
                 <span class="text">Absen</span>
             </a>
         </li>
-        <li class="list">
-            <a class="klik_menu" id="id-card">
+        <li class="list" id="id-card">
+            <a class="klik_menu" >
                 <span class="icon">
                     <ion-icon name="id-card-outline"></ion-icon>
                 </span>
                 <span class="text">ID Card</span>
             </a>
         </li>
-        <li class="list">
-            <a class="klik_menu" id="riwayat">
+        <li class="list" id="riwayat">
+            <a class="klik_menu" >
                 <span class="icon">
                     <ion-icon name="document-text-outline"></ion-icon>
                 </span>

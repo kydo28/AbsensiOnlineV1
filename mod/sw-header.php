@@ -204,7 +204,7 @@ echo'<!-- App Sidebar -->
                                 </div> Profil
                             </a>
                         </li>
-                        <li class="list-sidebar" id="side-present">
+                        <li class="list-sidebar" id="side-absen">
                             <a class="item" >
                                 <div class="icon-box">
                                     <ion-icon name="scan-outline"></ion-icon>
@@ -218,7 +218,7 @@ echo'<!-- App Sidebar -->
                                 </div> ID Card
                             </a>
                         </li>
-                        <li class="list-sidebar" id="side-history">
+                        <li class="list-sidebar" id="side-riwayat">
                             <a class="item" >
                                 <div class="icon-box">
                                     <ion-icon name="document-text-outline"></ion-icon>

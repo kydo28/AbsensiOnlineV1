@@ -19,13 +19,13 @@ if ($mod ==''){
 }
 ?>
 <script>
-  const weekday = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+  const weekdayz = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
         const fullMonth=["Januari","Februari",'Maret',"April",'Mei',"Juni","Juli",'Agustus','September','Oktober','November','Desember']
         const d=new Date()
         let date=d.getDate();
         let month=fullMonth[d.getMonth()];
         let year=d.getFullYear();
-        let day=weekday[d.getDay()];
+        let day=weekdayz[d.getDay()];
 
 
     window.addEventListener('load',(event)=>{
@@ -53,58 +53,51 @@ if ($mod ==''){
 
 
     
-$('.klik_menu').click(function(e){
-    e.preventDefault()
-    var menu=$(this).attr('id')
-    alert(menu)
-    switch(menu){
-        case 'profile':
-            $('.layout').load('./profile')
-            break;
-        case 'home':
-            $('.layout').load('./home2')
-            break;
-        case 'absen':
-            $('.layout').load('./present')
-            break;
-        case 'id-card':
-            $('.layout').load('./id-card')
-            break;
-        case 'riwayat':
-            $('.layout').load('./history')
-            break;
-    }
-   
-  
-})
+const array_nav=['home','profile','absen','id-card','riwayat']
+const array_side=[]
+const array_route=['./home2','./profile','./present','./id-card','./history']
+
+array_nav.forEach((item)=>array_side.push("side-"+item))
+
+///Navbar bottom
+const lists = document.querySelectorAll('.list');
 const list_sidebar = document.querySelectorAll('.list-sidebar');
 
-function activeLink() {
-    
+function activeLinks() {
     var menu=$(this).attr('id')
-    alert(menu)
-    switch(menu){
-        case 'side-profile':
-            $('.layout').load('./profile')
-            break;
-        case 'side-home':
-            $('.layout').load('./home2')
-            break;
-        case 'side-present':
-            $('.layout').load('./present')
-            break;
-        case 'side-id-card':
-            $('.layout').load('./id-card')
-            break;
-        case 'side-history':
-            $('.layout').load('./history')
-            break;
-        case 'side-logout':
-            window.location.href='./index'
-    }
-    list_sidebar.forEach((item) =>{
-        item.classList.remove('active')
-        });
+    list_sidebar.forEach((item)=>item.classList.remove('active'))
+    array_nav.forEach((item,i)=>{
+        if(menu==item){
+            $('.layout').load(array_route[i])
+            list_sidebar[i].classList.add('active')
+        }
+    })
+    lists.forEach((item) =>
+        item.classList.remove('active'));
+    this.classList.add('active');
+   
+}
+
+
+lists.forEach((item) =>
+    item.addEventListener('click', activeLinks));
+// Sidebar 
+
+function activeLink() {
+    var menu=$(this).attr('id')   
+    lists.forEach((item)=>item.classList.remove('active'))
+    array_side.forEach((item,i)=>{
+        if(menu==item){
+            $('.layout').load(array_route[i])
+            lists[i].classList.add('active')
+            return 
+        }
+        if(menu=='side-logout'){
+            window.location.href='./logout'
+            return
+        }
+    })
+    list_sidebar.forEach((item) =>item.classList.remove('active'));
     this.classList.add('active');
 }
 list_sidebar.forEach((item) =>

@@ -256,6 +256,11 @@ $ratio_ori  = $width / $height_new;
 $tmp=imagecreatetruecolor($width_new,$height_new);
 imagecopyresampled($tmp,$src,0,0,0,0,$width_new,$height_new,$width,$height);
 
+$m = date("m"); // Month value
+$de = date("d"); // Today's date
+$y = date("Y"); // Year value
+
+$yesterday= date('d-m-Y', mktime(0,0,0,$m,($de-1),$y));
 if (empty($_GET['latitude'])) {
       $error[] = 'tidak boleh kosong';
     } else {
@@ -266,23 +271,25 @@ if (empty($_GET['latitude'])) {
   $result_u = $connection->query($query_u);
   if($result_u->num_rows > 0){
       $row_u = $result_u->fetch_assoc();
-    
-      // Cek data Absen Berdasarkan tanggal sekarang
-      $query  ="SELECT employees_id,time_in FROM presence WHERE employees_id='$row_u[id]' AND presence_date='$date'";
+
+       
+        // Cek data Absen Berdasarkan tanggal sekarang
+      $query  ="SELECT * FROM presence WHERE employees_id='$row_u[id]' AND presence_date='$yesterday'   ";
       $result = $connection->query($query);
       $row = $result->fetch_assoc();
-      if($result->num_rows > 0){
+      if($result->num_rows > 0 || $row['time_in']>='23:00:00') {
         // Update Absensi Pulang
-        $query  ="SELECT time_out,employees_id FROM presence WHERE employees_id='$row_u[id]' AND presence_date='$date'";
+        $query  ="SELECT * FROM presence WHERE employees_id='$row_u[id]' AND  presence_date='$date'";
         $result = $connection->query($query);
         $row = $result->fetch_assoc();
-          if($result->num_rows > 0){
+          if($result->num_rows > 0 ){
             if($row['time_out']=='00:00:00'){
             //Update Jam Pulang
             	$filename =''.seo_title($row_user['employees_name']).'-out-'.$date.'-'.$row_user['id'].'.jpg';
       			$directory= "../content/present/".$filename;
 
-              $update ="UPDATE presence SET time_out='$time',picture_out='$filename' WHERE employees_id='$row_u[id]' AND presence_date='$date'";
+              $update ="UPDATE presence SET time_out='$time',picture_out='$filename',presence_date_out='$date' WHERE employees_id='$row_u[id]' AND presence_date='$date'";
+              
               if($connection->query($update) === false) { 
                   die($connection->error.__LINE__); 
                   echo'Sepetinya sitem kami sedang error!';
@@ -322,6 +329,7 @@ if (empty($_GET['latitude'])) {
               die($connection->error.__LINE__); 
               echo'Sepertinya Sistem Kami sedang error!';
           } else{
+            
               echo'success/Selamat Anda berhasil Absen Masuk pada Tanggal '.tanggal_ind($date).' dan Jam : '.$time.', Semangat bekerja "'.$row_u['employees_name'].'" !';
               imagejpeg($tmp,$directory,80);
         }

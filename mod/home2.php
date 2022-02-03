@@ -74,18 +74,23 @@ if ($mod ==''){
                                   <th scope="col">Tanggal</th>
                                   <th scope="col">Jam Masuk</th>
                                   <th scope="col">Jam Pulang</th>
+                                  <th scope="col">Tanggal Pulang</th>
+                                
+                                  
                               </tr>
                           </thead>
                           <tbody>';
-                              $query_absen="SELECT presence_date,time_in,time_out FROM presence WHERE MONTH(presence_date) ='$month' AND employees_id='$row_user[id]' ORDER BY presence_id DESC LIMIT 6";
+                              $query_absen="SELECT * FROM presence WHERE MONTH(presence_date) ='$month' AND employees_id='$row_user[id]' ORDER BY presence_id DESC LIMIT 6";
                               $result_absen = $connection->query($query_absen);
                               if($result_absen->num_rows > 0){
                                   while ($row_absen= $result_absen->fetch_assoc()) {
                                   echo'
-                                  <tr>
+                                  <tr class="text-center">
                                       <th scope="row">'.tgl_ind($row_absen['presence_date']).'</th>
                                       <td>'.$row_absen['time_in'].'</td>
                                       <td>'.$row_absen['time_out'].'</td>
+                                      <td>'.tgl_ind($row_absen['presence_date_out']).'</td>  
+                                    
                                   </tr>';
                               }}
                               echo'
